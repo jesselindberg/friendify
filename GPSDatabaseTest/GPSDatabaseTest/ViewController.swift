@@ -41,7 +41,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let myString = formatter.string(from: Date())
         let yourDate = formatter.date(from: myString)
-        formatter.dateFormat = "dd-MMM-yyyy HH:mm"
+        formatter.dateFormat = "dd-MMM HH:mm"
         let myStringafd = formatter.string(from: yourDate!)
         return myStringafd
     }
@@ -50,12 +50,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let ref = Database.database().reference()
         let productRef = ref.child("DeviceData")
 
-        productRef.observeSingleEvent(of: .value, with: { snapshot in
-            let locationDict: Dictionary<String,Dictionary<String,Any>>  = snapshot.value! as! Dictionary<String,Dictionary<String,Any>>
-            let device_names = locationDict.keys
+        productRef.observe(.value, with: { snapshot in
+            let data_snapshot = (snapshot.children.allObjects as? [DataSnapshot])
             var names_info = "Devices in the Database: \n"
-            for name in device_names{
-                names_info.append(name + "\n")
+            for snap in data_snapshot!{
+                names_info.append(snap.key + "\n")
             }
             self.LocationsField.text = names_info
         })
