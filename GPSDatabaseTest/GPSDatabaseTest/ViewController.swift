@@ -17,6 +17,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var currentLocation: CLLocation!
     @IBOutlet weak var LocationsField: UILabel!
     
+    var locationsData: Array<[String: Any]> = []
     @IBAction func UpdateLocation(_ sender: Any) {
         updateDeviceLocationToDB()
     }
@@ -59,11 +60,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateDeviceLocationToDB(){
         let ref = Database.database().reference()
-        ref.child("DeviceData/\(UIDevice.current.name)").childByAutoId().setValue([
-            "latitude": locationManager.location?.coordinate.latitude as Any,
-            "longitude": locationManager.location?.coordinate.longitude as Any,
-            "timestamp": currentTime()
-        ])
+        ref.child("DeviceData/\(UIDevice.current.name)").setValue(locationsData)
     }
     
     func currentTime() -> String{
@@ -71,7 +68,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let myString = formatter.string(from: Date())
         let yourDate = formatter.date(from: myString)
-        formatter.dateFormat = "dd-MMM-yyyy HH:mm"
+        formatter.dateFormat = "dd-MMM HH:mm"
         let myStringafd = formatter.string(from: yourDate!)
         return myStringafd
     }
@@ -106,6 +103,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getCurrentLocation()
+        Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
+            if self.locationsData.count > 10{
+                self.locationsData.removeFirst()
+            }
+            self.locationsData.append([
+                "latitude": self.locationManager.location?.coordinate.latitude as Any,
+                "longitude": self.locationManager.location?.coordinate.longitude as Any,
+                "timestamp": self.currentTime()
+            ])
+        }
     }
     
     func getCurrentLocation(){
