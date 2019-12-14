@@ -64,13 +64,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func currentTime() -> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let myString = formatter.string(from: Date())
-        let yourDate = formatter.date(from: myString)
-        formatter.dateFormat = "dd-MMM HH:mm"
-        let myStringafd = formatter.string(from: yourDate!)
-        return myStringafd
+        let formatter = ISO8601DateFormatter()
+        return formatter.string(from: Date())
     }
     
     func showDetectedDevices(completion: @escaping (_ result: Any) -> Void) -> [String: Any]{
