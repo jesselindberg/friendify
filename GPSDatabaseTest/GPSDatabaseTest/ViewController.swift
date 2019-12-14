@@ -91,8 +91,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getCurrentLocation()
-        Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
-            if self.locationsData.count > 10{
+        Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { timer in
+            if self.locationsData.count > 0 {
                 self.locationsData.removeFirst()
             }
             self.locationsData.append([
@@ -100,6 +100,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 "longitude": self.locationManager.location?.coordinate.longitude as Any,
                 "timestamp": self.getCurrentTime()
             ])
+            self.updateLocationToDB()
         }
     }
     
