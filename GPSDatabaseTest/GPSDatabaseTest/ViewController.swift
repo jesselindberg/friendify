@@ -24,9 +24,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         sendToDatabase(message: message)
         self.MessageField.text = ""
     }
-    @IBAction func getMessages(_ sender: UIButton) {
-        showMessagesFromDB()
-    }
     
     var locationsData: Array<[String: Any]> = []
     @IBAction func UpdateLocation(_ sender: Any) {
@@ -126,9 +123,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     let long = self.getDeviceCurrentLocation().1
                     let deviceLocation = CLLocation(latitude: lat, longitude: long)
                     let messageLocation = CLLocation(latitude: message_data.childSnapshot(forPath: "latitude").value! as! CLLocationDegrees, longitude: message_data.childSnapshot(forPath: "longitude").value! as! CLLocationDegrees)
-                    print(distance(loc1: deviceLocation, loc2: messageLocation))
                     if distance(loc1: deviceLocation, loc2: messageLocation) < 150{
-                        print("the message was sent close from you...")
                         self.LocationsField.text! += (message_data.childSnapshot(forPath: "message").value! as! String)
                         self.LocationsField.text! += "\n"
                         self.detected_message_ids.append(message_data.key)
@@ -142,6 +137,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         startUpdatingLocation()
+        showMessagesFromDB()
 //        Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { timer in
 //            if self.locationsData.count > 0 {
 //                self.locationsData.removeFirst()
