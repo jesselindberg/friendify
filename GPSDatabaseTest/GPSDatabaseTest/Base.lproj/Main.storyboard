@@ -16,34 +16,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbe-ZA-hc9">
-                                <rect key="frame" x="73" y="79" width="228" height="64"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="25j-Hy-VeK">
+                                <rect key="frame" x="73" y="54" width="228" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.57647058823529407" green="0.45882352941176469" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSN-Sl-BiF">
+                                <rect key="frame" x="119" y="160" width="135" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.57647058819999997" green="0.45882352939999999" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
-                                <state key="normal" title="Device location to DB">
+                                <state key="normal" title="Send">
                                     <color key="titleColor" red="0.98725718259999995" green="0.99985319380000004" blue="0.9994465709" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" red="0.047058824450000002" green="0.060472413900000001" blue="0.084717087450000006" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="UpdateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zA1-xL-Ej7"/>
+                                    <action selector="SendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ywK-QG-0Rf"/>
+                                    <action selector="UpdateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0s-hA-O9e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKe-sH-Arh">
-                                <rect key="frame" x="73" y="163" width="228" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c91-sI-kee">
+                                <rect key="frame" x="119" y="203" width="135" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.57647058823529407" green="0.45882352941176469" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.57647058819999997" green="0.45882352939999999" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
-                                <state key="normal" title="Show devices from DB">
+                                <state key="normal" title="Get messages">
                                     <color key="titleColor" red="0.98725718259999995" green="0.99985319380000004" blue="0.9994465709" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" red="0.047058824450000002" green="0.060472413900000001" blue="0.084717087450000006" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="ShowLocations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SGM-A5-XB3"/>
+                                    <action selector="SendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xU7-Bl-Ppm"/>
+                                    <action selector="UpdateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G6B-LG-Lhe"/>
+                                    <action selector="getMessages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UNl-Wb-yku"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oe3-bj-M0F">
-                                <rect key="frame" x="61" y="256" width="293" height="263"/>
+                                <rect key="frame" x="60" y="246" width="295" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -55,11 +66,12 @@
                     </view>
                     <connections>
                         <outlet property="LocationsField" destination="Oe3-bj-M0F" id="NpU-5m-xZ1"/>
+                        <outlet property="MessageField" destination="25j-Hy-VeK" id="alJ-tj-j0D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+            <point key="canvasLocation" x="191.30434782608697" y="21.428571428571427"/>
         </scene>
     </scenes>
 </document>
