@@ -123,7 +123,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     let long = self.getDeviceCurrentLocation().1
                     let deviceLocation = CLLocation(latitude: lat, longitude: long)
                     let messageLocation = CLLocation(latitude: message_data.childSnapshot(forPath: "latitude").value! as! CLLocationDegrees, longitude: message_data.childSnapshot(forPath: "longitude").value! as! CLLocationDegrees)
-                    if distance(loc1: deviceLocation, loc2: messageLocation) < 150{
+                    if distance(loc1: deviceLocation, loc2: messageLocation) < 100{
                         self.LocationsField.text! += (message_data.childSnapshot(forPath: "message").value! as! String)
                         self.LocationsField.text! += "\n"
                         self.detected_message_ids.append(message_data.key)
