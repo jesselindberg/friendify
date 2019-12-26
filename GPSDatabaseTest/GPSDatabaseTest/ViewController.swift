@@ -48,7 +48,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if !message.isEmpty{
             let ref = Database.database().reference()
             let lat = self.locationManager.location?.coordinate.latitude as Any
-            let long = self.locationManager.location?.coordinate.latitude as Any
+            let long = self.locationManager.location?.coordinate.longitude as Any
             let time = self.getCurrentTime()
             let data = ["latitude":lat, "longitude":long, "time":time, "message":message]
             ref.child("messages").childByAutoId().setValue(data)
@@ -86,6 +86,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         return formatter.string(from: Date())
     }
     
+    func getDeviceCurrentLocation() -> (CLLocationDegrees, CLLocationDegrees){
+        let lat = self.locationManager.location?.coordinate.latitude
+        let long = self.locationManager.location?.coordinate.longitude
+        return (lat!, long!)
+    }
+    
 //    func detectedDevices(completion: @escaping (_ result: Any) -> Void) -> [String: Any]{
 //        var all_data: [String: Any] = [:]
 //        let database_reference = Database.database().reference()
@@ -116,9 +122,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         productRef.observe(.childAdded) { (message_data) in
             DispatchQueue.main.async {
                 if !(self.detected_message_ids.contains(message_data.key)){
-                    self.LocationsField.text! += (message_data.childSnapshot(forPath: "message").value! as! String)
-                    self.LocationsField.text! += "\n"
-                    self.detected_message_ids.append(message_data.key)
+                    let lat = self.getDeviceCurrentLocation().0
+                    let long = self.getDeviceCurrentLocation().1
+                    let deviceLocation = CLLocation(latitude: lat, longitude: long)
+                    let messageLocation = CLLocation(latitude: message_data.childSnapshot(forPath: "latitude").value! as! CLLocationDegrees, longitude: message_data.childSnapshot(forPath: "longitude").value! as! CLLocationDegrees)
+                    print(distance(loc1: deviceLocation, loc2: messageLocation))
+                    if distance(loc1: deviceLocation, loc2: messageLocation) < 150{
+                        print("the message was sent close from you...")
+                        self.LocationsField.text! += (message_data.childSnapshot(forPath: "message").value! as! String)
+                        self.LocationsField.text! += "\n"
+                        self.detected_message_ids.append(message_data.key)
+                    }
                 }
             }
         }
@@ -127,7 +141,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        getCurrentLocation()
+        startUpdatingLocation()
 //        Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { timer in
 //            if self.locationsData.count > 0 {
 //                self.locationsData.removeFirst()
@@ -141,7 +155,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //        }
     }
     
-    func getCurrentLocation(){
+    func startUpdatingLocation(){
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
