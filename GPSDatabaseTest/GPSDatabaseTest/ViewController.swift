@@ -13,10 +13,12 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    let messageBoxHeight = CGFloat(50)
     var detected_message_ids: [String] = []
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation!
-    @IBOutlet weak var LocationsField: UILabel!
+    var bottomMessagePosition: CGPoint!
+    var bottomMessage: UITextView!
     @IBOutlet weak var MessageField: UITextView!
     
     @IBAction func SendMessage(_ sender: Any) {
@@ -124,8 +126,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     let deviceLocation = CLLocation(latitude: lat, longitude: long)
                     let messageLocation = CLLocation(latitude: message_data.childSnapshot(forPath: "latitude").value! as! CLLocationDegrees, longitude: message_data.childSnapshot(forPath: "longitude").value! as! CLLocationDegrees)
                     if distance(loc1: deviceLocation, loc2: messageLocation) < 100{
-                        self.LocationsField.text! += (message_data.childSnapshot(forPath: "message").value! as! String)
-                        self.LocationsField.text! += "\n"
+                        self.addNewMessageBox(withMessage: (message_data.childSnapshot(forPath: "message").value! as! String))
                         self.detected_message_ids.append(message_data.key)
                     }
                 }
@@ -133,8 +134,46 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    func updateBottom(messagePosition: CGPoint){
+        bottomMessagePosition = messagePosition
+    }
+    
+    func getBottomMessagePosition() -> CGPoint {
+        if let pos = bottomMessagePosition{
+            return pos
+        }else{
+            initBottomMessagePosition()
+            return bottomMessagePosition
+        }
+    }
+    
+    func newMessageCenterPosition() -> CGPoint{
+        let x = getBottomMessagePosition().x
+        let y = getBottomMessagePosition().y + messageBoxHeight
+        return CGPoint(x: x, y: y)
+    }
+    
+    func initBottomMessagePosition(){
+       bottomMessagePosition = CGPoint(x: self.view.frame.midX, y: self.view.frame.size.height/2)
+    }
+    
+    func addNewMessageBox(withMessage: String){
+        let label = UITextView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: messageBoxHeight))
+        label.center = newMessageCenterPosition()
+        label.textAlignment = .center
+        label.text = withMessage
+        print(label.center)
+        label.font = UIFont.systemFont(ofSize: 17.0)
+        label.layer.borderWidth = 1
+        label.backgroundColor = .white
+        label.isUserInteractionEnabled = false
+        self.view.addSubview(label)
+        updateBottom(messagePosition: label.center)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         startUpdatingLocation()
         showMessagesFromDB()
