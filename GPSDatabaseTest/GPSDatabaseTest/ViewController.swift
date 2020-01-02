@@ -102,8 +102,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         label.text = withMessage
         print(label.center)
         label.font = UIFont.systemFont(ofSize: 17.0)
-        label.layer.borderWidth = 1
-        label.backgroundColor = .white
+        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.9)
+        label.layer.borderWidth = 0.45
         label.isUserInteractionEnabled = false
         self.view.addSubview(label)
         updateBottom(messagePosition: label.center)
