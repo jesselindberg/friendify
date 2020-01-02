@@ -38,19 +38,11 @@
                                     <action selector="UpdateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0s-hA-O9e"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oe3-bj-M0F">
-                                <rect key="frame" x="60" y="246" width="295" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="LocationsField" destination="Oe3-bj-M0F" id="NpU-5m-xZ1"/>
                         <outlet property="MessageField" destination="25j-Hy-VeK" id="alJ-tj-j0D"/>
                     </connections>
                 </viewController>
