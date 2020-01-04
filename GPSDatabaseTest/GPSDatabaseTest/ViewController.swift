@@ -14,7 +14,7 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let messageBoxHeight = CGFloat(50)
-    var detected_message_ids: [String] = []
+    var detectedMessageIds: [String] = []
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation!
     var bottomMessagePosition: CGPoint!
@@ -58,14 +58,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let productRef = database_reference.child("messages")
         productRef.observe(.childAdded) { (message_data) in
             DispatchQueue.main.async {
-                if !(self.detected_message_ids.contains(message_data.key)){
+                if !(self.detectedMessageIds.contains(message_data.key)){
                     let lat = self.getDeviceCurrentLocation().0
                     let long = self.getDeviceCurrentLocation().1
                     let deviceLocation = CLLocation(latitude: lat, longitude: long)
                     let messageLocation = CLLocation(latitude: message_data.childSnapshot(forPath: "latitude").value! as! CLLocationDegrees, longitude: message_data.childSnapshot(forPath: "longitude").value! as! CLLocationDegrees)
                     if distance(loc1: deviceLocation, loc2: messageLocation) < 100{
                         self.addNewMessageBox(withMessage: (message_data.childSnapshot(forPath: "message").value! as! String))
-                        self.detected_message_ids.append(message_data.key)
+                        self.detectedMessageIds.append(message_data.key)
                     }
                 }
             }
