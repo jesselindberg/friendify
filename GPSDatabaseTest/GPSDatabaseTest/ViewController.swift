@@ -87,12 +87,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func newMessageCenterPosition() -> CGPoint{
         let x = getBottomMessagePosition().x
-        let y = getBottomMessagePosition().y + messageBoxHeight
+        let y = getBottomMessagePosition().y - messageBoxHeight
         return CGPoint(x: x, y: y)
     }
     
     func initBottomMessagePosition(){
-       bottomMessagePosition = CGPoint(x: self.view.frame.midX, y: self.view.frame.size.height/2)
+        bottomMessagePosition = CGPoint(x: self.view.frame.midX, y: self.view.frame.size.height/1.2)
     }
     
     func addNewMessageBox(withMessage: String){
