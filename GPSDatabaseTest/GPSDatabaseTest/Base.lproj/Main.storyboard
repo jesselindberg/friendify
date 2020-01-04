@@ -16,18 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="25j-Hy-VeK">
-                                <rect key="frame" x="73" y="54" width="228" height="98"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="25j-Hy-VeK">
+                                <rect key="frame" x="93" y="54" width="228" height="98"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="25j-Hy-VeK" secondAttribute="height" multiplier="114:49" id="2NG-42-99t"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSN-Sl-BiF">
-                                <rect key="frame" x="119" y="160" width="135" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSN-Sl-BiF">
+                                <rect key="frame" x="140" y="160" width="134" height="34.5"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FSN-Sl-BiF" secondAttribute="height" multiplier="27:7" id="jnE-kZ-E6N"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                 <state key="normal" title="Send">
                                     <color key="titleColor" red="0.98725718259999995" green="0.99985319380000004" blue="0.9994465709" alpha="1" colorSpace="deviceRGB"/>
@@ -40,6 +44,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FSN-Sl-BiF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="2Ys-s8-CiT"/>
+                            <constraint firstItem="25j-Hy-VeK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="Uxn-8I-Unf"/>
+                            <constraint firstItem="FSN-Sl-BiF" firstAttribute="top" secondItem="25j-Hy-VeK" secondAttribute="bottom" constant="8" id="X1Z-RO-UnL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FSN-Sl-BiF" secondAttribute="trailing" constant="140" id="hzr-rY-9Hj"/>
+                            <constraint firstItem="25j-Hy-VeK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ifY-G2-dxu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="25j-Hy-VeK" secondAttribute="trailing" constant="93" id="sad-9u-Bk0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
