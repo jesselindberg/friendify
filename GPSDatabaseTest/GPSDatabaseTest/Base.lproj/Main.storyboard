@@ -17,23 +17,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="25j-Hy-VeK">
-                                <rect key="frame" x="93" y="54" width="228" height="98"/>
+                                <rect key="frame" x="30" y="770" width="310" height="67"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="25j-Hy-VeK" secondAttribute="height" multiplier="114:49" id="2NG-42-99t"/>
+                                    <constraint firstAttribute="width" constant="310" id="2cx-5Y-WLe"/>
+                                    <constraint firstAttribute="width" secondItem="25j-Hy-VeK" secondAttribute="height" multiplier="310:67" id="9cF-Qg-U6A"/>
+                                    <constraint firstAttribute="height" constant="67" id="EFM-P1-TWf"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSN-Sl-BiF">
-                                <rect key="frame" x="140" y="160" width="134" height="34.5"/>
+                                <rect key="frame" x="343" y="771" width="51" height="66"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="FSN-Sl-BiF" secondAttribute="height" multiplier="27:7" id="jnE-kZ-E6N"/>
+                                    <constraint firstAttribute="height" constant="66" id="OJf-KR-mNq"/>
+                                    <constraint firstAttribute="width" constant="51" id="WdG-sw-OSu"/>
+                                    <constraint firstAttribute="width" secondItem="FSN-Sl-BiF" secondAttribute="height" multiplier="17:22" id="ykq-BF-HWi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
-                                <state key="normal" title="Send">
+                                <state key="normal" title="&gt;">
                                     <color key="titleColor" red="0.98725718259999995" green="0.99985319380000004" blue="0.9994465709" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" red="0.047058824450000002" green="0.060472413900000001" blue="0.084717087450000006" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
@@ -45,12 +49,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FSN-Sl-BiF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="2Ys-s8-CiT"/>
-                            <constraint firstItem="25j-Hy-VeK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="Uxn-8I-Unf"/>
-                            <constraint firstItem="FSN-Sl-BiF" firstAttribute="top" secondItem="25j-Hy-VeK" secondAttribute="bottom" constant="8" id="X1Z-RO-UnL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FSN-Sl-BiF" secondAttribute="trailing" constant="140" id="hzr-rY-9Hj"/>
-                            <constraint firstItem="25j-Hy-VeK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ifY-G2-dxu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="25j-Hy-VeK" secondAttribute="trailing" constant="93" id="sad-9u-Bk0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FSN-Sl-BiF" secondAttribute="trailing" constant="20" id="3v6-U1-gfL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="25j-Hy-VeK" secondAttribute="bottom" constant="25" id="Cew-jc-6SZ"/>
+                            <constraint firstItem="FSN-Sl-BiF" firstAttribute="leading" secondItem="25j-Hy-VeK" secondAttribute="trailing" constant="3" id="N61-SA-ZIB"/>
+                            <constraint firstItem="25j-Hy-VeK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="PSq-iU-hYe"/>
+                            <constraint firstItem="FSN-Sl-BiF" firstAttribute="leading" secondItem="25j-Hy-VeK" secondAttribute="trailing" constant="3" id="eSi-jl-5hM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FSN-Sl-BiF" secondAttribute="bottom" constant="25" id="tw1-lJ-tcq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
