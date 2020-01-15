@@ -48,9 +48,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getDeviceCurrentLocation() -> (CLLocationDegrees, CLLocationDegrees){
-        let lat = self.locationManager.location?.coordinate.latitude
-        let long = self.locationManager.location?.coordinate.longitude
-        return (lat!, long!)
+        if let loc = locationManager.location{
+            let lat = self.locationManager.location?.coordinate.latitude
+            let long = self.locationManager.location?.coordinate.longitude
+            return (lat!, long!)
+        }else{
+            return (0,0)
+        }
     }
     
     func showMessagesFromDB(){
@@ -100,10 +104,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         label.center = newMessageCenterPosition()
         label.textAlignment = .center
         label.text = withMessage
-        print(label.center)
         label.font = UIFont.systemFont(ofSize: 22.0)
-        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.9)
-        label.layer.borderWidth = 0.45
+        label.textColor = .white
+        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.0)
         label.isUserInteractionEnabled = false
         label.textAlignment = .left
         self.view.addSubview(label)
