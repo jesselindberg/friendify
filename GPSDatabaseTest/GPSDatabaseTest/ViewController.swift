@@ -12,7 +12,19 @@ import FirebaseDatabase
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
-    let test = ["Voi vitun vitun vitun vitun vitun vitun vittu"]
+    
+    struct Location {
+        var latitude = 0.0
+        var longitude = 0.0
+    }
+    
+    var myCurrentLocation: Location = Location(latitude: 0.0, longitude: 0.0)
+    let messageVisibilityRadius = 100.0
+    var detectedMessageIds: [String] = []
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
+    @IBOutlet weak var MessageField: UITextView!
+
     @IBOutlet weak var tableView: UITableView!
     var allNearbyMessages: [String] = []
     
@@ -33,26 +45,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         tableView.endUpdates()
     }
     
-    
-    let messageBoxHeight = CGFloat(50)
-    var detectedMessageIds: [String] = []
-    let locationManager = CLLocationManager()
-    var currentLocation: CLLocation!
-    var bottomMessagePosition: CGPoint!
-    var bottomMessage: UITextView!
-    @IBOutlet weak var MessageField: UITextView!
-    
     @IBAction func SendMessage(_ sender: Any) {
         let message = self.MessageField.text!
-        sendToDatabase(message: message)
+        sendToDatabase(message)
         self.MessageField.text = ""
     }
-    
-    // This does nothing but removing it causes the app crash... Probably caused by some dependency etc...
-    @IBAction func UpdateLocation(_ sender: Any) {
-    }
         
-    func sendToDatabase(message: String){
+    func sendToDatabase(_ message: String){
         if !message.isEmpty{
             let ref = Database.database().reference()
             let lat = self.locationManager.location?.coordinate.latitude as Any
@@ -68,30 +67,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         return formatter.string(from: Date())
     }
     
-    func getDeviceCurrentLocation() -> (CLLocationDegrees, CLLocationDegrees){
+    func updateDeviceCurrentLocation(){
         if let loc = locationManager.location{
-            let lat = self.locationManager.location?.coordinate.latitude
-            let long = self.locationManager.location?.coordinate.longitude
-            return (lat!, long!)
-        }else{
-            return (0,0)
+            myCurrentLocation.latitude = loc.coordinate.latitude
+            myCurrentLocation.longitude = loc.coordinate.longitude
         }
     }
     
-    func showMessagesFromDB(){
+    //Naive implementation - this gets all the messages from the DB and filters out that aren't close enough to be shown.
+    func fetchAndShowMessagesFromDB(){
         let database_reference = Database.database().reference()
-        let productRef = database_reference.child("messages")
-        productRef.observe(.childAdded) { (message_data) in
+        let messagesRef = database_reference.child("messages")
+        messagesRef.observe(.childAdded) { (message_data) in
             DispatchQueue.main.async {
                 if !(self.detectedMessageIds.contains(message_data.key)){
-                    let lat = self.getDeviceCurrentLocation().0
-                    let long = self.getDeviceCurrentLocation().1
-                    let deviceLocation = CLLocation(latitude: lat, longitude: long)
+                    self.updateDeviceCurrentLocation()
+                    let deviceLocation = CLLocation(latitude: self.myCurrentLocation.latitude, longitude: self.myCurrentLocation.longitude)
                     let messageLocation = CLLocation(latitude: message_data.childSnapshot(forPath: "latitude").value! as! CLLocationDegrees, longitude: message_data.childSnapshot(forPath: "longitude").value! as! CLLocationDegrees)
-                    if distance(loc1: deviceLocation, loc2: messageLocation) < 100{
-                        let msg = (message_data.childSnapshot(forPath: "message").value! as! String)
-                        self.allNearbyMessages.append(msg)
-                        //self.addNewMessageBox(withMessage: msg)
+                    if distance(loc1: deviceLocation, loc2: messageLocation) < self.messageVisibilityRadius {
+                        let message = (message_data.childSnapshot(forPath: "message").value! as! String)
+                        self.allNearbyMessages.append(message)
                         self.detectedMessageIds.append(message_data.key)
                         if self.allNearbyMessages.count > 0{
                             self.addMessagesToTableView(messages: self.allNearbyMessages)
@@ -102,63 +97,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }
     }
     
-    func updateBottom(messagePosition: CGPoint){
-        bottomMessagePosition = messagePosition
-    }
-    
-    func getBottomMessagePosition() -> CGPoint {
-        if let pos = bottomMessagePosition{
-            return pos
-        }else{
-            initBottomMessagePosition()
-            return bottomMessagePosition
-        }
-    }
-    
-    func newMessageCenterPosition() -> CGPoint{
-        let x = getBottomMessagePosition().x
-        let y = getBottomMessagePosition().y - messageBoxHeight
-        return CGPoint(x: x, y: y)
-    }
-    
-    func initBottomMessagePosition(){
-        bottomMessagePosition = CGPoint(x: self.view.frame.midX, y: self.view.frame.size.height/1.2)
-    }
-    
-    func addNewMessageBox(withMessage: String){
-        let label = UITextView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: messageBoxHeight))
-        label.center = newMessageCenterPosition()
-        label.textAlignment = .center
-        label.text = withMessage
-        label.font = UIFont.systemFont(ofSize: 22.0)
-        label.textColor = .white
-        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.0)
-        label.isUserInteractionEnabled = false
-        label.textAlignment = .left
-        self.view.addSubview(label)
-        updateBottom(messagePosition: label.center)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view here.
         startUpdatingLocation()
-        showMessagesFromDB()
+        fetchAndShowMessagesFromDB()
         
-        //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
-
         view.addGestureRecognizer(tap)
     }
     
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
@@ -185,4 +138,3 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }
     }
 }
-

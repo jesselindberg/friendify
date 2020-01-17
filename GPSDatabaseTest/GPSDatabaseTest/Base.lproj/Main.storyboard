@@ -122,7 +122,6 @@
                                 </state>
                                 <connections>
                                     <action selector="SendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ywK-QG-0Rf"/>
-                                    <action selector="UpdateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0s-hA-O9e"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S4w-dz-2ZR">
