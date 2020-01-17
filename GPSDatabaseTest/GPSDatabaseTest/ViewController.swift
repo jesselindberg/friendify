@@ -11,7 +11,28 @@ import CoreLocation
 import FirebaseDatabase
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+    let test = ["Voi vitun vitun vitun vitun vitun vitun vittu"]
+    @IBOutlet weak var tableView: UITableView!
+    var allNearbyMessages: [String] = []
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        allNearbyMessages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessageCell
+        cell.message.text = allNearbyMessages[indexPath.row]
+        cell.message.isUserInteractionEnabled = false
+        return cell
+    }
+    
+    func addMessagesToTableView(messages: [String]){
+        tableView.beginUpdates()
+        tableView.insertRows(at: [IndexPath(row: messages.count-1, section: 0)], with: .automatic)
+        tableView.endUpdates()
+    }
+    
     
     let messageBoxHeight = CGFloat(50)
     var detectedMessageIds: [String] = []
@@ -68,8 +89,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     let deviceLocation = CLLocation(latitude: lat, longitude: long)
                     let messageLocation = CLLocation(latitude: message_data.childSnapshot(forPath: "latitude").value! as! CLLocationDegrees, longitude: message_data.childSnapshot(forPath: "longitude").value! as! CLLocationDegrees)
                     if distance(loc1: deviceLocation, loc2: messageLocation) < 100{
-                        self.addNewMessageBox(withMessage: (message_data.childSnapshot(forPath: "message").value! as! String))
+                        let msg = (message_data.childSnapshot(forPath: "message").value! as! String)
+                        self.allNearbyMessages.append(msg)
+                        //self.addNewMessageBox(withMessage: msg)
                         self.detectedMessageIds.append(message_data.key)
+                        if self.allNearbyMessages.count > 0{
+                            self.addMessagesToTableView(messages: self.allNearbyMessages)
+                        }
                     }
                 }
             }

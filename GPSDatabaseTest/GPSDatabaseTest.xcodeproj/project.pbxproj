@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		87029B19237C80F100AC0E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87029B18237C80F100AC0E6E /* GoogleService-Info.plist */; };
 		87231C5023CF76C00018638B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87231C4F23CF76C00018638B /* MenuViewController.swift */; };
+		87231C5223D1C8DE0018638B /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87231C5123D1C8DE0018638B /* MessageCell.swift */; };
 		872B90592380265B005BD531 /* DistanceFromCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B90582380265B005BD531 /* DistanceFromCoords.swift */; };
 		878A57AD237B4F270047282E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57AC237B4F270047282E /* AppDelegate.swift */; };
 		878A57AF237B4F270047282E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57AE237B4F270047282E /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 		51BCE6367456C64FD23C35CD /* Pods-GPSDatabaseTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSDatabaseTest.debug.xcconfig"; path = "Target Support Files/Pods-GPSDatabaseTest/Pods-GPSDatabaseTest.debug.xcconfig"; sourceTree = "<group>"; };
 		87029B18237C80F100AC0E6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		87231C4F23CF76C00018638B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		87231C5123D1C8DE0018638B /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		872B90582380265B005BD531 /* DistanceFromCoords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFromCoords.swift; sourceTree = "<group>"; };
 		878A57A9237B4F270047282E /* GPSDatabaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSDatabaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878A57AC237B4F270047282E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				878A57AC237B4F270047282E /* AppDelegate.swift */,
 				878A57AE237B4F270047282E /* SceneDelegate.swift */,
 				878A57B0237B4F270047282E /* ViewController.swift */,
+				87231C5123D1C8DE0018638B /* MessageCell.swift */,
 				87231C4F23CF76C00018638B /* MenuViewController.swift */,
 				872B90582380265B005BD531 /* DistanceFromCoords.swift */,
 				878A57B2237B4F270047282E /* Main.storyboard */,
@@ -221,6 +224,7 @@
 				878A57B1237B4F270047282E /* ViewController.swift in Sources */,
 				878A57AD237B4F270047282E /* AppDelegate.swift in Sources */,
 				878A57AF237B4F270047282E /* SceneDelegate.swift in Sources */,
+				87231C5223D1C8DE0018638B /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

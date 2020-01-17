@@ -125,25 +125,73 @@
                                     <action selector="UpdateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0s-hA-O9e"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S4w-dz-2ZR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="742"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="S4w-dz-2ZR" secondAttribute="height" multiplier="207:371" id="g8v-4c-O3w"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="188" id="7hk-T1-8PU" customClass="MessageCell" customModule="GPSDatabaseTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="188"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7hk-T1-8PU" id="Nem-Jw-b99">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-7Z-fCB">
+                                                    <rect key="frame" x="20" y="11" width="374" height="166"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="QdG-7Z-fCB" secondAttribute="height" multiplier="187:83" id="II3-7S-eXO"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QdG-7Z-fCB" firstAttribute="bottom" secondItem="Nem-Jw-b99" secondAttribute="bottomMargin" id="6zU-MG-itV"/>
+                                                <constraint firstItem="QdG-7Z-fCB" firstAttribute="leading" secondItem="Nem-Jw-b99" secondAttribute="leadingMargin" id="DT4-FA-ryK"/>
+                                                <constraint firstItem="QdG-7Z-fCB" firstAttribute="top" secondItem="Nem-Jw-b99" secondAttribute="topMargin" id="Jtt-Xb-Uwa"/>
+                                                <constraint firstItem="QdG-7Z-fCB" firstAttribute="trailing" secondItem="Nem-Jw-b99" secondAttribute="trailingMargin" id="VAE-NM-Uo2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="message" destination="QdG-7Z-fCB" id="juR-MS-gBx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="RrW-nd-d8N"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hIc-2u-bkq"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S4w-dz-2ZR" secondAttribute="bottom" constant="66" id="6SW-Wf-Kg3"/>
                             <constraint firstItem="FSN-Sl-BiF" firstAttribute="leading" secondItem="25j-Hy-VeK" secondAttribute="trailing" id="72o-Cy-YWE"/>
                             <constraint firstItem="25j-Hy-VeK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RQf-zV-Pn9"/>
                             <constraint firstItem="FSN-Sl-BiF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rw0-U4-nZ0"/>
+                            <constraint firstItem="S4w-dz-2ZR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZJZ-HZ-DCC"/>
                             <constraint firstItem="FSN-Sl-BiF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fNN-Os-zha"/>
                             <constraint firstItem="25j-Hy-VeK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fVG-wN-hpB"/>
+                            <constraint firstItem="S4w-dz-2ZR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nJn-h2-bzH"/>
+                            <constraint firstItem="S4w-dz-2ZR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q6B-ah-hQ5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="JCk-dc-LpK"/>
                     <connections>
                         <outlet property="MessageField" destination="25j-Hy-VeK" id="alJ-tj-j0D"/>
+                        <outlet property="tableView" destination="S4w-dz-2ZR" id="f78-P8-YdV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="29"/>
+            <point key="canvasLocation" x="779.71014492753625" y="28.794642857142854"/>
         </scene>
     </scenes>
 </document>
