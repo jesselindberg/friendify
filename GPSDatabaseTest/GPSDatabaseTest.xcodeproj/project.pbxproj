@@ -94,11 +94,8 @@
 			children = (
 				878A57AC237B4F270047282E /* AppDelegate.swift */,
 				878A57AE237B4F270047282E /* SceneDelegate.swift */,
-				878A57B0237B4F270047282E /* ViewController.swift */,
-				87231C5123D1C8DE0018638B /* MessageCell.swift */,
-				87231C4F23CF76C00018638B /* MenuViewController.swift */,
-				87ACA8B923D3425D00C2CF14 /* FriendViewController.swift */,
-				87ACA8BB23D344ED00C2CF14 /* FriendCell.swift */,
+				87ACA8BE23D3619500C2CF14 /* ViewControllers */,
+				87ACA8BF23D361A600C2CF14 /* Cells */,
 				872B90582380265B005BD531 /* DistanceFromCoords.swift */,
 				878A57B2237B4F270047282E /* Main.storyboard */,
 				878A57B5237B4F280047282E /* Assets.xcassets */,
@@ -107,6 +104,25 @@
 				878A57BA237B4F280047282E /* Info.plist */,
 			);
 			path = GPSDatabaseTest;
+			sourceTree = "<group>";
+		};
+		87ACA8BE23D3619500C2CF14 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				878A57B0237B4F270047282E /* ViewController.swift */,
+				87231C4F23CF76C00018638B /* MenuViewController.swift */,
+				87ACA8B923D3425D00C2CF14 /* FriendViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		87ACA8BF23D361A600C2CF14 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				87231C5123D1C8DE0018638B /* MessageCell.swift */,
+				87ACA8BB23D344ED00C2CF14 /* FriendCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

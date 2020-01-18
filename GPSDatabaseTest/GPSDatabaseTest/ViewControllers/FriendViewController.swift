@@ -29,7 +29,7 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func createFriendCellFrom(data: [String:String]) -> FriendCell{
+    func createFriendCellFrom(data: [String:String]) -> FriendCell {
         let info = data["info"]
         let imageName = data["picture"]!
         let image = UIImage(named: imageName)
@@ -39,7 +39,7 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return friendCell
     }
     
-    func transformDataToFriendCellArray(data: [[String:String]]) -> [FriendCell]{
+    func transformDataToFriendCellArray(data: [[String:String]]) -> [FriendCell] {
         var friendCells: [FriendCell] = []
         for data in exampleData{
             let friendCell = createFriendCellFrom(data: data)
@@ -57,7 +57,6 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addFriendsToFriendView(friends: transformDataToFriendCellArray(data: exampleData))
         // Do any additional setup after loading the view.
         friendCells = transformDataToFriendCellArray(data: exampleData)
         addFriendsToFriendView(friends: friendCells)

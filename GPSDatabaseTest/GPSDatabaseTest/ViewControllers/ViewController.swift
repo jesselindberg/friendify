@@ -52,7 +52,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     }
         
     func sendToDatabase(_ message: String){
-        if !message.isEmpty{
+        if !message.isEmpty {
             let ref = Database.database().reference()
             let lat = self.locationManager.location?.coordinate.latitude as Any
             let long = self.locationManager.location?.coordinate.longitude as Any
@@ -62,12 +62,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }
     }
     
-    func getCurrentTime() -> String{
+    func getCurrentTime() -> String {
         let formatter = ISO8601DateFormatter()
         return formatter.string(from: Date())
     }
     
-    func updateDeviceCurrentLocation(){
+    func updateDeviceCurrentLocation() {
         if let loc = locationManager.location{
             myCurrentLocation.latitude = loc.coordinate.latitude
             myCurrentLocation.longitude = loc.coordinate.longitude
@@ -75,7 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     }
     
     //Naive implementation - this gets all the messages from the DB and filters out that aren't close enough to be shown.
-    func fetchAndShowMessagesFromDB(){
+    func fetchAndShowMessagesFromDB() {
         let database_reference = Database.database().reference()
         let messagesRef = database_reference.child("messages")
         messagesRef.observe(.childAdded) { (message_data) in
@@ -88,9 +88,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
                         let message = (message_data.childSnapshot(forPath: "message").value! as! String)
                         self.allNearbyMessages.append(message)
                         self.detectedMessageIds.append(message_data.key)
-                        if self.allNearbyMessages.count > 0{
-                            self.addMessagesToTableView(messages: self.allNearbyMessages)
-                        }
+                        self.addMessagesToTableView(messages: self.allNearbyMessages)
                     }
                 }
             }
@@ -129,7 +127,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }
     }
     
-    func startUpdatingLocation(){
+    func startUpdatingLocation() { 
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
