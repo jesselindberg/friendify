@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 
+let userDefault = UserDefaults.standard
+let launchedBefore = UserDefaults.standard.bool(forKey: "usersignedin")
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

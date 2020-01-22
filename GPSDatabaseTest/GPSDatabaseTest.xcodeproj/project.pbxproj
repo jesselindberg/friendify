@@ -11,6 +11,7 @@
 		87231C5023CF76C00018638B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87231C4F23CF76C00018638B /* MenuViewController.swift */; };
 		87231C5223D1C8DE0018638B /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87231C5123D1C8DE0018638B /* MessageCell.swift */; };
 		872B90592380265B005BD531 /* DistanceFromCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B90582380265B005BD531 /* DistanceFromCoords.swift */; };
+		873AB25623D8B0F300319462 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873AB25523D8B0F300319462 /* LoginViewController.swift */; };
 		878A57AD237B4F270047282E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57AC237B4F270047282E /* AppDelegate.swift */; };
 		878A57AF237B4F270047282E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57AE237B4F270047282E /* SceneDelegate.swift */; };
 		878A57B1237B4F270047282E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57B0237B4F270047282E /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		87231C4F23CF76C00018638B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		87231C5123D1C8DE0018638B /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		872B90582380265B005BD531 /* DistanceFromCoords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFromCoords.swift; sourceTree = "<group>"; };
+		873AB25523D8B0F300319462 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		878A57A9237B4F270047282E /* GPSDatabaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSDatabaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878A57AC237B4F270047282E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		878A57AE237B4F270047282E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				878A57B0237B4F270047282E /* ViewController.swift */,
 				87231C4F23CF76C00018638B /* MenuViewController.swift */,
 				87ACA8B923D3425D00C2CF14 /* FriendViewController.swift */,
+				873AB25523D8B0F300319462 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 				878A57A6237B4F270047282E /* Frameworks */,
 				878A57A7237B4F270047282E /* Resources */,
 				BB8949EE6EAE2D3268B04DF9 /* [CP] Embed Pods Frameworks */,
+				E10E93D93502FF21DB9B0AD9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +238,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPSDatabaseTest/Pods-GPSDatabaseTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E10E93D93502FF21DB9B0AD9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSDatabaseTest/Pods-GPSDatabaseTest-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSDatabaseTest/Pods-GPSDatabaseTest-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPSDatabaseTest/Pods-GPSDatabaseTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -241,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				873AB25623D8B0F300319462 /* LoginViewController.swift in Sources */,
 				872B90592380265B005BD531 /* DistanceFromCoords.swift in Sources */,
 				87231C5023CF76C00018638B /* MenuViewController.swift in Sources */,
 				878A57B1237B4F270047282E /* ViewController.swift in Sources */,
