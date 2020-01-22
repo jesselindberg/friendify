@@ -8,5 +8,6 @@ target 'GPSDatabaseTest' do
   # Pods for GPSDatabaseTest
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 
 end
