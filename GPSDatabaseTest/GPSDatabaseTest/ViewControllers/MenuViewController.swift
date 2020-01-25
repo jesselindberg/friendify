@@ -53,17 +53,15 @@ class MenuViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         storageProfileRef.putData(imageData, metadata: metadata, completion: {(storageMetadata, error) in
             if error != nil{
-                print(error?.localizedDescription)
+                print(error.debugDescription)
                 return
             }
         })
         
-        print(userID)
         if let nick = username.text{
             name = nick
             username.text = ""
         }
-        print("name saved")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,16 +91,4 @@ class MenuViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

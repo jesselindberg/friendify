@@ -14,7 +14,7 @@
 		873AB25623D8B0F300319462 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873AB25523D8B0F300319462 /* LoginViewController.swift */; };
 		878A57AD237B4F270047282E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57AC237B4F270047282E /* AppDelegate.swift */; };
 		878A57AF237B4F270047282E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57AE237B4F270047282E /* SceneDelegate.swift */; };
-		878A57B1237B4F270047282E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57B0237B4F270047282E /* ViewController.swift */; };
+		878A57B1237B4F270047282E /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57B0237B4F270047282E /* MessageViewController.swift */; };
 		878A57B4237B4F270047282E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878A57B2237B4F270047282E /* Main.storyboard */; };
 		878A57B6237B4F280047282E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 878A57B5237B4F280047282E /* Assets.xcassets */; };
 		878A57B9237B4F280047282E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878A57B7237B4F280047282E /* LaunchScreen.storyboard */; };
@@ -35,7 +35,7 @@
 		878A57A9237B4F270047282E /* GPSDatabaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSDatabaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878A57AC237B4F270047282E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		878A57AE237B4F270047282E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		878A57B0237B4F270047282E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		878A57B0237B4F270047282E /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		878A57B3237B4F270047282E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		878A57B5237B4F280047282E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		878A57B8237B4F280047282E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		87ACA8BE23D3619500C2CF14 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				878A57B0237B4F270047282E /* ViewController.swift */,
+				878A57B0237B4F270047282E /* MessageViewController.swift */,
 				87231C4F23CF76C00018638B /* MenuViewController.swift */,
 				87ACA8B923D3425D00C2CF14 /* FriendViewController.swift */,
 				873AB25523D8B0F300319462 /* LoginViewController.swift */,
@@ -265,7 +265,7 @@
 				873AB25623D8B0F300319462 /* LoginViewController.swift in Sources */,
 				872B90592380265B005BD531 /* DistanceFromCoords.swift in Sources */,
 				87231C5023CF76C00018638B /* MenuViewController.swift in Sources */,
-				878A57B1237B4F270047282E /* ViewController.swift in Sources */,
+				878A57B1237B4F270047282E /* MessageViewController.swift in Sources */,
 				87ACA8BC23D344ED00C2CF14 /* FriendCell.swift in Sources */,
 				87ACA8BA23D3425D00C2CF14 /* FriendViewController.swift in Sources */,
 				878A57AD237B4F270047282E /* AppDelegate.swift in Sources */,

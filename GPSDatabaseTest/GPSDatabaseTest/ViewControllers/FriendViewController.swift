@@ -49,7 +49,6 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func addFriendsToFriendView(friends: [FriendCell]) {
-        print(friends.count)
         tableView.beginUpdates()
         tableView.insertRows(at: [IndexPath(row: friends.count-1, section: 0)], with: .automatic)
         tableView.endUpdates()
@@ -61,15 +60,4 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
         friendCells = transformDataToFriendCellArray(data: exampleData)
         addFriendsToFriendView(friends: friendCells)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

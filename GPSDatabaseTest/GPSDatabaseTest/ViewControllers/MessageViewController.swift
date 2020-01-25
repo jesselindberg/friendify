@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MessageViewController.swift
 //  GPSDatabaseTest
 //
 //  Created by Artturi Jalli on 12/11/2019.
@@ -11,22 +11,24 @@ import CoreLocation
 import FirebaseDatabase
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+class MessageViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     struct Location {
         var latitude = 0.0
         var longitude = 0.0
     }
     
-    var myCurrentLocation: Location = Location(latitude: 0.0, longitude: 0.0)
+    var myCurrentLocation: Location = Location()
+    
     let messageVisibilityRadius = 100.0
-    var detectedMessageIds: [String] = []
     let locationManager = CLLocationManager()
+    
+    var detectedMessageIds: [String] = []
     var currentLocation: CLLocation!
-    @IBOutlet weak var MessageField: UITextView!
-
-    @IBOutlet weak var tableView: UITableView!
     var allNearbyMessages: [String] = []
+    
+    @IBOutlet weak var MessageField: UITextView!
+    @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         allNearbyMessages.count
@@ -67,7 +69,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         return formatter.string(from: Date())
     }
     
-    func updateDeviceCurrentLocation() {
+    func updateMyCurrentLocation() {
         if let loc = locationManager.location{
             myCurrentLocation.latitude = loc.coordinate.latitude
             myCurrentLocation.longitude = loc.coordinate.longitude
@@ -81,9 +83,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         messagesRef.observe(.childAdded) { (message_data) in
             DispatchQueue.main.async {
                 if !(self.detectedMessageIds.contains(message_data.key)){
-                    self.updateDeviceCurrentLocation()
+                    self.updateMyCurrentLocation()
                     let deviceLocation = CLLocation(latitude: self.myCurrentLocation.latitude, longitude: self.myCurrentLocation.longitude)
-                    let messageLocation = CLLocation(latitude: message_data.childSnapshot(forPath: "latitude").value! as! CLLocationDegrees, longitude: message_data.childSnapshot(forPath: "longitude").value! as! CLLocationDegrees)
+                    guard let lat = message_data.childSnapshot(forPath: "latitude").value as? CLLocationDegrees else { return }
+                    guard let long = message_data.childSnapshot(forPath: "longitude").value as? CLLocationDegrees else { return }
+                    let messageLocation = CLLocation(latitude: lat, longitude: long)
                     if distance(loc1: deviceLocation, loc2: messageLocation) < self.messageVisibilityRadius {
                         let message = (message_data.childSnapshot(forPath: "message").value! as! String)
                         self.allNearbyMessages.append(message)
@@ -93,19 +97,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
                 }
             }
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view here.
-        startUpdatingLocation()
-        fetchAndShowMessagesFromDB()
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        //tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
     }
     
     //Calls this function when the tap is recognized.
@@ -127,7 +118,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }
     }
     
-    func startUpdatingLocation() { 
+    func startUpdatingMyLocation() {
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
@@ -135,4 +126,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             locationManager.startUpdatingLocation()
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view here.
+        startUpdatingMyLocation()
+        fetchAndShowMessagesFromDB()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        //tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+
 }
