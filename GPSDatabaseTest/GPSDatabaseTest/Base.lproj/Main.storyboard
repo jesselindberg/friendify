@@ -16,15 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gy-IP-Zlj">
-                                <rect key="frame" x="78" y="746" width="259" height="72"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gy-IP-Zlj">
+                                <rect key="frame" x="78" y="743" width="259" height="51"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="259" id="ANz-uo-GBo"/>
-                                    <constraint firstAttribute="width" secondItem="3gy-IP-Zlj" secondAttribute="height" multiplier="259:72" id="Wjw-f1-66V"/>
-                                    <constraint firstAttribute="height" constant="72" id="Zfr-20-sSO"/>
+                                    <constraint firstAttribute="width" secondItem="3gy-IP-Zlj" secondAttribute="height" multiplier="259:51" id="Bhl-wS-h7E"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="27"/>
                                 <state key="normal" title="Local chat">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
@@ -32,60 +30,84 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="menuChatSegue" id="kew-jv-GqT"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name(Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4K-VO-Maa">
-                                <rect key="frame" x="99" y="382" width="217" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="f4K-VO-Maa" secondAttribute="height" multiplier="217:34" id="pTf-pE-caH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4K-VO-Maa">
+                                <rect key="frame" x="100" y="486" width="217" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqf-Az-EWM">
-                                <rect key="frame" x="141" y="432" width="133" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friendify Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urs-K9-8tR">
+                                <rect key="frame" x="20" y="20" width="374" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Nqf-Az-EWM" secondAttribute="height" multiplier="133:30" id="Ny1-nu-KT5"/>
+                                    <constraint firstAttribute="width" secondItem="Urs-K9-8tR" secondAttribute="height" multiplier="187:30" id="kH1-lp-CY9"/>
                                 </constraints>
-                                <state key="normal" title="Save name"/>
-                                <connections>
-                                    <action selector="saveUsername:" destination="MVO-ZB-d8k" eventType="touchUpInside" id="Ens-VP-sB6"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friendify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urs-K9-8tR">
-                                <rect key="frame" x="48" y="119" width="319" height="237"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Urs-K9-8tR" secondAttribute="height" multiplier="319:237" id="sBt-SN-ony"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="51"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="39"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="empty_profile" translatesAutoresizingMaskIntoConstraints="NO" id="bbM-sp-nqu">
+                                <rect key="frame" x="88" y="146" width="240" height="231.00000000000011"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="231" id="di6-Qc-aft"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eX-1U-6A2">
+                                <rect key="frame" x="100" y="385" width="217" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="RZo-1E-e4v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Choose an image"/>
+                                <connections>
+                                    <action selector="selectImage:" destination="MVO-ZB-d8k" eventType="touchUpInside" id="n0q-pJ-Nem"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqf-Az-EWM">
+                                <rect key="frame" x="100" y="551" width="217" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3u7-31-cx6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveProfile:" destination="MVO-ZB-d8k" eventType="touchUpInside" id="IVN-78-Ehv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Urs-K9-8tR" firstAttribute="top" secondItem="UJx-3X-aMu" secondAttribute="top" constant="119" id="29s-gM-8In"/>
-                            <constraint firstItem="3gy-IP-Zlj" firstAttribute="bottom" secondItem="UJx-3X-aMu" secondAttribute="bottom" id="Frp-8B-n2S"/>
-                            <constraint firstItem="3gy-IP-Zlj" firstAttribute="leading" secondItem="UJx-3X-aMu" secondAttribute="leading" constant="78" id="GGV-6s-cqC"/>
-                            <constraint firstItem="UJx-3X-aMu" firstAttribute="trailing" secondItem="Urs-K9-8tR" secondAttribute="trailing" constant="47" id="IYq-AL-iNr"/>
-                            <constraint firstItem="f4K-VO-Maa" firstAttribute="leading" secondItem="UJx-3X-aMu" secondAttribute="leading" constant="99" id="Q9k-gZ-H7G"/>
-                            <constraint firstItem="UJx-3X-aMu" firstAttribute="trailing" secondItem="3gy-IP-Zlj" secondAttribute="trailing" constant="77" id="W8l-vT-S54"/>
-                            <constraint firstItem="f4K-VO-Maa" firstAttribute="top" secondItem="Urs-K9-8tR" secondAttribute="bottom" constant="26" id="Z5n-VE-nru"/>
-                            <constraint firstItem="UJx-3X-aMu" firstAttribute="trailing" secondItem="f4K-VO-Maa" secondAttribute="trailing" constant="98" id="bc7-cU-0sk"/>
-                            <constraint firstItem="Urs-K9-8tR" firstAttribute="leading" secondItem="UJx-3X-aMu" secondAttribute="leading" constant="48" id="cDY-kJ-Q6n"/>
-                            <constraint firstItem="Nqf-Az-EWM" firstAttribute="top" secondItem="f4K-VO-Maa" secondAttribute="bottom" constant="16" id="j9x-aq-1ma"/>
-                            <constraint firstItem="3gy-IP-Zlj" firstAttribute="top" secondItem="Nqf-Az-EWM" secondAttribute="bottom" constant="284" id="jQJ-45-2GB"/>
-                            <constraint firstItem="UJx-3X-aMu" firstAttribute="trailing" secondItem="Nqf-Az-EWM" secondAttribute="trailing" constant="140" id="mAf-u1-FKg"/>
-                            <constraint firstItem="Nqf-Az-EWM" firstAttribute="leading" secondItem="UJx-3X-aMu" secondAttribute="leading" constant="141" id="utp-vF-pDD"/>
+                            <constraint firstItem="bbM-sp-nqu" firstAttribute="centerX" secondItem="7eX-1U-6A2" secondAttribute="centerX" id="1CR-tS-8yC"/>
+                            <constraint firstItem="f4K-VO-Maa" firstAttribute="trailing" secondItem="Nqf-Az-EWM" secondAttribute="trailing" id="4X5-xQ-sMb"/>
+                            <constraint firstItem="Urs-K9-8tR" firstAttribute="top" secondItem="UJx-3X-aMu" secondAttribute="top" constant="20" id="4eD-uh-D8Y"/>
+                            <constraint firstItem="7eX-1U-6A2" firstAttribute="leading" secondItem="UJx-3X-aMu" secondAttribute="leading" constant="100" id="8Tl-7A-YUw"/>
+                            <constraint firstItem="7eX-1U-6A2" firstAttribute="top" secondItem="bbM-sp-nqu" secondAttribute="bottom" constant="8" id="91a-mZ-vGw"/>
+                            <constraint firstItem="Nqf-Az-EWM" firstAttribute="top" secondItem="f4K-VO-Maa" secondAttribute="bottom" constant="31" id="EZz-f7-Kpv"/>
+                            <constraint firstItem="f4K-VO-Maa" firstAttribute="top" secondItem="7eX-1U-6A2" secondAttribute="bottom" constant="64" id="GGj-Su-miy"/>
+                            <constraint firstItem="UJx-3X-aMu" firstAttribute="trailing" secondItem="Urs-K9-8tR" secondAttribute="trailing" constant="20" id="MQI-ix-15B"/>
+                            <constraint firstItem="UJx-3X-aMu" firstAttribute="trailing" secondItem="3gy-IP-Zlj" secondAttribute="trailing" constant="77" id="PWG-jq-auz"/>
+                            <constraint firstItem="7eX-1U-6A2" firstAttribute="leading" secondItem="f4K-VO-Maa" secondAttribute="leading" id="RJp-Il-8RD"/>
+                            <constraint firstItem="Urs-K9-8tR" firstAttribute="leading" secondItem="UJx-3X-aMu" secondAttribute="leading" constant="20" id="T6G-Gc-RJ6"/>
+                            <constraint firstItem="bbM-sp-nqu" firstAttribute="top" secondItem="Urs-K9-8tR" secondAttribute="bottom" constant="66" id="U2P-ah-f1l"/>
+                            <constraint firstItem="7eX-1U-6A2" firstAttribute="trailing" secondItem="f4K-VO-Maa" secondAttribute="trailing" id="Wvh-K9-njQ"/>
+                            <constraint firstItem="UJx-3X-aMu" firstAttribute="bottom" secondItem="3gy-IP-Zlj" secondAttribute="bottom" constant="14" id="cVD-dD-19F"/>
+                            <constraint firstItem="f4K-VO-Maa" firstAttribute="leading" secondItem="Nqf-Az-EWM" secondAttribute="leading" id="j01-ll-GCk"/>
+                            <constraint firstItem="bbM-sp-nqu" firstAttribute="leading" secondItem="UJx-3X-aMu" secondAttribute="leading" constant="88" id="oD0-M2-0y9"/>
+                            <constraint firstItem="3gy-IP-Zlj" firstAttribute="leading" secondItem="UJx-3X-aMu" secondAttribute="leading" constant="78" id="ol1-pX-GH7"/>
+                            <constraint firstItem="bbM-sp-nqu" firstAttribute="centerX" secondItem="3gy-IP-Zlj" secondAttribute="centerX" id="waW-dG-IXD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UJx-3X-aMu"/>
                     </view>
                     <navigationItem key="navigationItem" id="QAK-C2-eSL"/>
                     <connections>
+                        <outlet property="profilePictureVIew" destination="bbM-sp-nqu" id="QPy-Sp-CMO"/>
                         <outlet property="username" destination="f4K-VO-Maa" id="HqN-Mo-KPP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4v-Dv-EZw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290" y="29"/>
+            <point key="canvasLocation" x="-291.304347826087" y="28.794642857142854"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
