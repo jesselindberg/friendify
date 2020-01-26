@@ -10,12 +10,18 @@
 		8897F3F723B4AF20006F014D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F3F623B4AF20006F014D /* AppDelegate.swift */; };
 		8897F3F923B4AF20006F014D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F3F823B4AF20006F014D /* SceneDelegate.swift */; };
 		8897F3FC23B4AF20006F014D /* Friendify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8897F3FA23B4AF20006F014D /* Friendify.xcdatamodeld */; };
-		8897F3FE23B4AF20006F014D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F3FD23B4AF20006F014D /* ContentView.swift */; };
 		8897F40023B4AF21006F014D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8897F3FF23B4AF21006F014D /* Assets.xcassets */; };
 		8897F40323B4AF21006F014D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8897F40223B4AF21006F014D /* Preview Assets.xcassets */; };
 		8897F40623B4AF21006F014D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8897F40423B4AF21006F014D /* LaunchScreen.storyboard */; };
 		8897F41123B4AF21006F014D /* FriendifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F41023B4AF21006F014D /* FriendifyTests.swift */; };
 		8897F41C23B4AF21006F014D /* FriendifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F41B23B4AF21006F014D /* FriendifyUITests.swift */; };
+		8897F42A23B4B189006F014D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F42923B4B189006F014D /* Device.swift */; };
+		8897F42C23B4B302006F014D /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F42B23B4B302006F014D /* DeviceRow.swift */; };
+		8897F42E23B4B3F4006F014D /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F42D23B4B3F4006F014D /* DeviceList.swift */; };
+		8897F43023B4C6D2006F014D /* BLEcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F42F23B4C6D2006F014D /* BLEcontroller.swift */; };
+		8897F43223BE6758006F014D /* DeviceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F43123BE6758006F014D /* DeviceDetail.swift */; };
+		8897F43423BE6F47006F014D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F43323BE6F47006F014D /* Home.swift */; };
+		8897F43623CF86E3006F014D /* CBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F43523CF86E3006F014D /* CBController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +46,6 @@
 		8897F3F623B4AF20006F014D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8897F3F823B4AF20006F014D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8897F3FB23B4AF20006F014D /* Friendify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Friendify.xcdatamodel; sourceTree = "<group>"; };
-		8897F3FD23B4AF20006F014D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8897F3FF23B4AF21006F014D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8897F40223B4AF21006F014D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8897F40523B4AF21006F014D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +56,13 @@
 		8897F41723B4AF21006F014D /* FriendifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8897F41B23B4AF21006F014D /* FriendifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendifyUITests.swift; sourceTree = "<group>"; };
 		8897F41D23B4AF21006F014D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8897F42923B4B189006F014D /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		8897F42B23B4B302006F014D /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
+		8897F42D23B4B3F4006F014D /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
+		8897F42F23B4C6D2006F014D /* BLEcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEcontroller.swift; sourceTree = "<group>"; };
+		8897F43123BE6758006F014D /* DeviceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetail.swift; sourceTree = "<group>"; };
+		8897F43323BE6F47006F014D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		8897F43523CF86E3006F014D /* CBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +113,15 @@
 		8897F3F523B4AF20006F014D /* Friendify */ = {
 			isa = PBXGroup;
 			children = (
+				8897F42F23B4C6D2006F014D /* BLEcontroller.swift */,
+				8897F43523CF86E3006F014D /* CBController.swift */,
 				8897F3F623B4AF20006F014D /* AppDelegate.swift */,
 				8897F3F823B4AF20006F014D /* SceneDelegate.swift */,
-				8897F3FD23B4AF20006F014D /* ContentView.swift */,
+				8897F43323BE6F47006F014D /* Home.swift */,
+				8897F42923B4B189006F014D /* Device.swift */,
+				8897F42B23B4B302006F014D /* DeviceRow.swift */,
+				8897F42D23B4B3F4006F014D /* DeviceList.swift */,
+				8897F43123BE6758006F014D /* DeviceDetail.swift */,
 				8897F3FF23B4AF21006F014D /* Assets.xcassets */,
 				8897F40423B4AF21006F014D /* LaunchScreen.storyboard */,
 				8897F40723B4AF21006F014D /* Info.plist */,
@@ -272,8 +290,14 @@
 			files = (
 				8897F3FC23B4AF20006F014D /* Friendify.xcdatamodeld in Sources */,
 				8897F3F723B4AF20006F014D /* AppDelegate.swift in Sources */,
-				8897F3FE23B4AF20006F014D /* ContentView.swift in Sources */,
+				8897F43423BE6F47006F014D /* Home.swift in Sources */,
+				8897F43223BE6758006F014D /* DeviceDetail.swift in Sources */,
+				8897F43623CF86E3006F014D /* CBController.swift in Sources */,
+				8897F42C23B4B302006F014D /* DeviceRow.swift in Sources */,
+				8897F42E23B4B3F4006F014D /* DeviceList.swift in Sources */,
+				8897F43023B4C6D2006F014D /* BLEcontroller.swift in Sources */,
 				8897F3F923B4AF20006F014D /* SceneDelegate.swift in Sources */,
+				8897F42A23B4B189006F014D /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Friendify/Preview Content\"";
+				DEVELOPMENT_TEAM = 9DDMADD52V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Friendify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -459,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Friendify/Preview Content\"";
+				DEVELOPMENT_TEAM = 9DDMADD52V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Friendify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
