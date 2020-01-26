@@ -15,11 +15,12 @@ class BLEService: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     //centralManager = CBCentralManager(delegate: self, queue: nil)
     var centralManager: CBCentralManager!
     var blePeripheral: CBPeripheral!
-    @EnvironmentObject var peripherals: Peripherals
     
     //var connectedDevices = [CBPeripheral]()
     var RSSIs = [NSNumber]()
     var connectedPeripherals = [CBPeripheral]()
+    
+    @Published var devices = [Device]()
     
     func start() {
         print("Testing")
@@ -87,12 +88,14 @@ class BLEService: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         print("Device ID:")
         print(device.id)
         print("Device name:")
-        print(peripheral.name)
-        print(device.name ?? "N/A")
+        print(peripheral.name ?? "Unknown device")
+        print(device.name)
         print("Device info:")
         print(device.peripheral_class)
         
-        //peripherals.devices.append(device)
+        DispatchQueue.main.async {
+            self.devices.append(device)
+        }
     }
     
     func connectToDevice (peripheral: CBPeripheral) {

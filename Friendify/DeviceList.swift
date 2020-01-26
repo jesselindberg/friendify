@@ -11,10 +11,10 @@ import CoreBluetooth
 import Combine
 
 struct DeviceList: View {
-    @EnvironmentObject var peripherals: Peripherals
+    @ObservedObject var viewModel: DeviceListViewModel
     
     var body: some View {
-        List(peripherals.devices) { device in
+        List(viewModel.devices) { device in
             Text(device.name)
             //DeviceRow(device: device)
         }
@@ -23,10 +23,7 @@ struct DeviceList: View {
 }
 
 struct DeviceList_Previews: PreviewProvider {
-    
-    static let peripherals = Peripherals()
-    
     static var previews: some View {
-        DeviceList().environmentObject(self.peripherals)
+        DeviceList(viewModel: DeviceListViewModel(bleService: BLEService()))
     }
 }

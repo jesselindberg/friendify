@@ -12,25 +12,14 @@ import CoreBluetooth
 import Combine
 
 struct Home: View {
-    
-    @EnvironmentObject var peripherals: Peripherals
-    var ble = BLEService()
+    let viewModel: HomeViewModel
     
     var body: some View {
         VStack {
-            Button(action: {
-                self.ble.start()
-                //self.ble.startScan()
-            }) {
-                Text("Start Scanning")
-            }
-            Button(action: {
-                print("Hello World!")
-            }) {
-                Text("Hello World")
-            }
+            Button("Start scanning", action: viewModel.startButtonPressed)
+            Button("Hello World!", action: viewModel.helloWorldButtonPressed)
             //BluetoothScan(ble: ble)
-            DeviceList()
+            DeviceList(viewModel: DeviceListViewModel(bleService: viewModel.bleService))
         }
     }
 }
@@ -48,9 +37,7 @@ struct BluetoothScan: View {
  */
 
 struct Home_Previews: PreviewProvider {
-    
-    static let peripherals = Peripherals()
     static var previews: some View {
-        Home().environmentObject(self.peripherals)
+        Home(viewModel: HomeViewModel(bleService: BLEService()))
     }
 }
