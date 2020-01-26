@@ -14,12 +14,12 @@ import Combine
 struct Home: View {
     
     @EnvironmentObject var peripherals: Peripherals
-    var ble = BLECentralViewController()
+    var ble = BLEService()
     
     var body: some View {
         VStack {
             Button(action: {
-                self.ble.viewDidLoad()
+                self.ble.start()
                 //self.ble.startScan()
             }) {
                 Text("Start Scanning")
