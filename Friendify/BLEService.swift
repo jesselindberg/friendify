@@ -11,28 +11,22 @@ import CoreBluetooth
 import SwiftUI
 import Combine
 
-class BLECentralViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
-    
+class BLEService: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     //centralManager = CBCentralManager(delegate: self, queue: nil)
     var centralManager: CBCentralManager!
     var blePeripheral: CBPeripheral!
-    @EnvironmentObject var peripherals: Peripherals
     
     //var connectedDevices = [CBPeripheral]()
     var RSSIs = [NSNumber]()
     var connectedPeripherals = [CBPeripheral]()
     
-    override func viewDidLoad() {
+    @Published var devices = [Device]()
+    
+    func start() {
         print("Testing")
-        super.viewDidLoad()
         let backgroundQueue = DispatchQueue.global(qos: .background)
         centralManager = CBCentralManager(delegate: self, queue: backgroundQueue)
     }
-    
-    override func didReceiveMemoryWarning() {
-         super.didReceiveMemoryWarning()
-         // Dispose of any resources that can be recreated.
-     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         
@@ -45,12 +39,14 @@ class BLECentralViewController: UIViewController, CBCentralManagerDelegate, CBPe
             startScan()
         case .poweredOff:
             print("Bluetooth is OFF")
+            // TODO: Not a good solution, calling back to the view would be better
+            let window = UIApplication.shared.windows.first
             let bluetoothAlert = UIAlertController(title: "Bluetooth is not enabled", message: "Please turn your Bluetooth on", preferredStyle: UIAlertController.Style.alert)
             let bluetoothAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction) -> Void in
-                self.dismiss(animated: true, completion: nil)
+                window?.rootViewController?.dismiss(animated: true, completion: nil)
             })
             bluetoothAlert.addAction(bluetoothAction)
-            self.present(bluetoothAlert, animated: true, completion: nil)
+            window?.rootViewController?.present(bluetoothAlert, animated: true, completion: nil)
         case .unknown:
             print("Bluetooth status is unknown")
         case .resetting:
@@ -92,12 +88,14 @@ class BLECentralViewController: UIViewController, CBCentralManagerDelegate, CBPe
         print("Device ID:")
         print(device.id)
         print("Device name:")
-        print(peripheral.name)
-        print(device.name ?? "N/A")
+        print(peripheral.name ?? "Unknown device")
+        print(device.name)
         print("Device info:")
         print(device.peripheral_class)
         
-        //peripherals.devices.append(device)
+        DispatchQueue.main.async {
+            self.devices.append(device)
+        }
     }
     
     func connectToDevice (peripheral: CBPeripheral) {

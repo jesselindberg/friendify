@@ -21,13 +21,13 @@ struct DeviceRow: View {
     }
 }
 
-struct DeviceRow_Previews: PreviewProvider {
-    static var peripherals = Peripherals()
-    static var previews: some View {
-        Group {
-            DeviceRow(device: peripherals.devices[0])
-            DeviceRow(device: peripherals.devices[1])
-        }
-        .previewLayout(.fixed(width: 300, height: 70))
-    }
-}
+//struct DeviceRow_Previews: PreviewProvider {
+//    static var peripherals = Peripherals()
+//    static var previews: some View {
+//        Group {
+//            DeviceRow(device: peripherals.devices[0])
+//            DeviceRow(device: peripherals.devices[1])
+//        }
+//        .previewLayout(.fixed(width: 300, height: 70))
+//    }
+//}

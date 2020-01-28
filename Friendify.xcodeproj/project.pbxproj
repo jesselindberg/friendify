@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27389C5323DE1873003B7E71 /* DeviceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27389C5223DE1873003B7E71 /* DeviceListViewModel.swift */; };
+		27389C5523DE34B7003B7E71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27389C5423DE34B7003B7E71 /* HomeViewModel.swift */; };
 		8897F3F723B4AF20006F014D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F3F623B4AF20006F014D /* AppDelegate.swift */; };
 		8897F3F923B4AF20006F014D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F3F823B4AF20006F014D /* SceneDelegate.swift */; };
 		8897F3FC23B4AF20006F014D /* Friendify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8897F3FA23B4AF20006F014D /* Friendify.xcdatamodeld */; };
@@ -18,7 +20,7 @@
 		8897F42A23B4B189006F014D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F42923B4B189006F014D /* Device.swift */; };
 		8897F42C23B4B302006F014D /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F42B23B4B302006F014D /* DeviceRow.swift */; };
 		8897F42E23B4B3F4006F014D /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F42D23B4B3F4006F014D /* DeviceList.swift */; };
-		8897F43023B4C6D2006F014D /* BLEcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F42F23B4C6D2006F014D /* BLEcontroller.swift */; };
+		8897F43023B4C6D2006F014D /* BLEService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F42F23B4C6D2006F014D /* BLEService.swift */; };
 		8897F43223BE6758006F014D /* DeviceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F43123BE6758006F014D /* DeviceDetail.swift */; };
 		8897F43423BE6F47006F014D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F43323BE6F47006F014D /* Home.swift */; };
 		8897F43623CF86E3006F014D /* CBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F43523CF86E3006F014D /* CBController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27389C5223DE1873003B7E71 /* DeviceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModel.swift; sourceTree = "<group>"; };
+		27389C5423DE34B7003B7E71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8897F3F323B4AF20006F014D /* Friendify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8897F3F623B4AF20006F014D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8897F3F823B4AF20006F014D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +63,7 @@
 		8897F42923B4B189006F014D /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		8897F42B23B4B302006F014D /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
 		8897F42D23B4B3F4006F014D /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
-		8897F42F23B4C6D2006F014D /* BLEcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEcontroller.swift; sourceTree = "<group>"; };
+		8897F42F23B4C6D2006F014D /* BLEService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEService.swift; sourceTree = "<group>"; };
 		8897F43123BE6758006F014D /* DeviceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetail.swift; sourceTree = "<group>"; };
 		8897F43323BE6F47006F014D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		8897F43523CF86E3006F014D /* CBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBController.swift; sourceTree = "<group>"; };
@@ -113,14 +117,16 @@
 		8897F3F523B4AF20006F014D /* Friendify */ = {
 			isa = PBXGroup;
 			children = (
-				8897F42F23B4C6D2006F014D /* BLEcontroller.swift */,
+				8897F42F23B4C6D2006F014D /* BLEService.swift */,
 				8897F43523CF86E3006F014D /* CBController.swift */,
 				8897F3F623B4AF20006F014D /* AppDelegate.swift */,
 				8897F3F823B4AF20006F014D /* SceneDelegate.swift */,
 				8897F43323BE6F47006F014D /* Home.swift */,
+				27389C5423DE34B7003B7E71 /* HomeViewModel.swift */,
 				8897F42923B4B189006F014D /* Device.swift */,
 				8897F42B23B4B302006F014D /* DeviceRow.swift */,
 				8897F42D23B4B3F4006F014D /* DeviceList.swift */,
+				27389C5223DE1873003B7E71 /* DeviceListViewModel.swift */,
 				8897F43123BE6758006F014D /* DeviceDetail.swift */,
 				8897F3FF23B4AF21006F014D /* Assets.xcassets */,
 				8897F40423B4AF21006F014D /* LaunchScreen.storyboard */,
@@ -295,8 +301,10 @@
 				8897F43623CF86E3006F014D /* CBController.swift in Sources */,
 				8897F42C23B4B302006F014D /* DeviceRow.swift in Sources */,
 				8897F42E23B4B3F4006F014D /* DeviceList.swift in Sources */,
-				8897F43023B4C6D2006F014D /* BLEcontroller.swift in Sources */,
+				27389C5523DE34B7003B7E71 /* HomeViewModel.swift in Sources */,
+				8897F43023B4C6D2006F014D /* BLEService.swift in Sources */,
 				8897F3F923B4AF20006F014D /* SceneDelegate.swift in Sources */,
+				27389C5323DE1873003B7E71 /* DeviceListViewModel.swift in Sources */,
 				8897F42A23B4B189006F014D /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

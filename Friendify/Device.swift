@@ -19,7 +19,7 @@ class Peripheral: CBPeripheral, Identifiable {
 
 struct Device: Hashable, Identifiable {
     var id: UUID
-    var name: String!
+    var name: String
     var peripheral_class: CBPeripheral
 }
 
@@ -27,15 +27,9 @@ extension Device {
     
     init(peripheral: CBPeripheral) {
         id = peripheral.identifier
-        name = peripheral.name
+        name = peripheral.name ?? "Unknown device"
         peripheral_class = peripheral
     }
 }
 
 let foundDevices = [CBPeripheral]()
-
-final class Peripherals: ObservableObject {
-    @Published var devices = [Device]()
-}
-
-
