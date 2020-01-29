@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "153008898741",
+    "firebase_url": "https://ioslocationdatabase.firebaseio.com",
+    "project_id": "ioslocationdatabase",
+    "storage_bucket": "ioslocationdatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153008898741:android:ed023471954031ed0f34fc",
+        "android_client_info": {
+          "package_name": "com.example.androiddatabaselocationtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153008898741-sb107sbmgm71cb4c2mgcm0lcb8k41tb1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.androiddatabaselocationtest",
+            "certificate_hash": "cbe9601d8e3d9b6edd3d4a617bc0990ca6512b4f"
+          }
+        },
+        {
+          "client_id": "153008898741-k9rdkq12s8vlud2isjnldbdlvo7b40nj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjlZ2BDaz-F9_CVvzu09rmnO3Q7CXt4IE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153008898741-k9rdkq12s8vlud2isjnldbdlvo7b40nj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "153008898741-nikd1a3du3ou3bo7hkj3btspqst1vpfr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Artturi-Jalli.GPSDatabaseTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

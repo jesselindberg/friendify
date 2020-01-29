@@ -1,0 +1,285 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:1-27:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\8b7353a4da394401f2770946eabec9bd\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\e88b13ae8ecbb63da81ec85463301b9c\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:17:1-42:12
+MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6275c96ba59d016316d9db74c75eea2d\play-services-location-17.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\1608f3437c2f912c7e8970465b968fb0\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\14da77a8f2c9de3962904ad9cc65a46b\firebase-auth-interop-19.0.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\596060fa59581d05bfda6f1380aa8ace\play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\db3e41666b223b117c4268c1a897bab2\play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\cf6d9406425791c1268f492e9728c8a3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\d9825d76f6bbee29e3578706a3ba71a2\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\ef2b9acfed30db7d42005e1e08b46c79\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6effe2cbf16174b668e3e1d0cfddf644\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\1428b5f834224b054b3655b7bb9f4141\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\3c570a0a75f7bdf20ec22b30af040369\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\a8c2bb309b0f0e205d5df49a5c8f0224\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\ea195e7a4deac63f8932aeb483676170\activity-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\33f3f4591626067cc73772904b9eb738\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\3e16f019840cc70306750a8dc25d7f2e\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\478b79604eaaf934858ce3739dce1708\core-1.1.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\a5cc52281db0c619acb263f3ec9583e2\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\b0258761e09ba69bc3c7bc9f6c71d3b2\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:16.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\002464061f795f10b2ea31f166415ac7\jetified-firebase-components-16.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6352da2278f4887fa4506d4f94107bca\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\c08fbd2ff03eaf1eb73b66b76b15a082\lifecycle-runtime-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\ede779bc2682400490f54d1fd5fcec7d\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\79c1d5c82fe746b1739cbdd05686da02\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\d5c3ac55f54e7be18a5143c57b0a7ada\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7eeeb2910d1096ef30c55533f294f81f\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\8a422b90bfe2308ee62c0eaef9ccdad3\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\b9053f481f6d09d6b0325c41025a2cd9\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\83c1e2b3ae911aa73c899a2445cf560a\firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:1-27:12
+	package
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:3:5-54
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:1-27:12
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:1-27:12
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:7:5-67
+MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:26:5-67
+	android:name
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:7:22-64
+application
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:9:5-25:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\e88b13ae8ecbb63da81ec85463301b9c\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\e88b13ae8ecbb63da81ec85463301b9c\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6275c96ba59d016316d9db74c75eea2d\play-services-location-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6275c96ba59d016316d9db74c75eea2d\play-services-location-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\14da77a8f2c9de3962904ad9cc65a46b\firebase-auth-interop-19.0.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\14da77a8f2c9de3962904ad9cc65a46b\firebase-auth-interop-19.0.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:25:5-37:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:25:5-37:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\596060fa59581d05bfda6f1380aa8ace\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\596060fa59581d05bfda6f1380aa8ace\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\db3e41666b223b117c4268c1a897bab2\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\db3e41666b223b117c4268c1a897bab2\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\cf6d9406425791c1268f492e9728c8a3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\cf6d9406425791c1268f492e9728c8a3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\478b79604eaaf934858ce3739dce1708\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\478b79604eaaf934858ce3739dce1708\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6352da2278f4887fa4506d4f94107bca\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6352da2278f4887fa4506d4f94107bca\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\478b79604eaaf934858ce3739dce1708\core-1.1.0\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:12:9-41
+	android:roundIcon
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:13:9-54
+	android:icon
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:15:9-40
+activity#com.example.androiddatabaselocationtest.LocalChat
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:16:9-56
+	android:name
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:16:19-44
+activity#com.example.androiddatabaselocationtest.LaunchActivity
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:17:9-23:20
+	android:name
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:17:19-49
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:21:27-74
+activity#com.example.androiddatabaselocationtest.MainActivity
+ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:24:9-50
+	android:name
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml:24:19-47
+uses-sdk
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\8b7353a4da394401f2770946eabec9bd\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\8b7353a4da394401f2770946eabec9bd\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\e88b13ae8ecbb63da81ec85463301b9c\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\e88b13ae8ecbb63da81ec85463301b9c\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6275c96ba59d016316d9db74c75eea2d\play-services-location-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6275c96ba59d016316d9db74c75eea2d\play-services-location-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\1608f3437c2f912c7e8970465b968fb0\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\1608f3437c2f912c7e8970465b968fb0\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\14da77a8f2c9de3962904ad9cc65a46b\firebase-auth-interop-19.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\14da77a8f2c9de3962904ad9cc65a46b\firebase-auth-interop-19.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\596060fa59581d05bfda6f1380aa8ace\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\596060fa59581d05bfda6f1380aa8ace\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\db3e41666b223b117c4268c1a897bab2\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\db3e41666b223b117c4268c1a897bab2\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\cf6d9406425791c1268f492e9728c8a3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\cf6d9406425791c1268f492e9728c8a3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\d9825d76f6bbee29e3578706a3ba71a2\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\d9825d76f6bbee29e3578706a3ba71a2\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\ef2b9acfed30db7d42005e1e08b46c79\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\ef2b9acfed30db7d42005e1e08b46c79\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6effe2cbf16174b668e3e1d0cfddf644\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6effe2cbf16174b668e3e1d0cfddf644\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\1428b5f834224b054b3655b7bb9f4141\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\1428b5f834224b054b3655b7bb9f4141\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\3c570a0a75f7bdf20ec22b30af040369\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\3c570a0a75f7bdf20ec22b30af040369\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\a8c2bb309b0f0e205d5df49a5c8f0224\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\a8c2bb309b0f0e205d5df49a5c8f0224\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\ea195e7a4deac63f8932aeb483676170\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\ea195e7a4deac63f8932aeb483676170\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\33f3f4591626067cc73772904b9eb738\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\33f3f4591626067cc73772904b9eb738\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\3e16f019840cc70306750a8dc25d7f2e\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\3e16f019840cc70306750a8dc25d7f2e\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\478b79604eaaf934858ce3739dce1708\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\478b79604eaaf934858ce3739dce1708\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\a5cc52281db0c619acb263f3ec9583e2\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\a5cc52281db0c619acb263f3ec9583e2\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\b0258761e09ba69bc3c7bc9f6c71d3b2\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\b0258761e09ba69bc3c7bc9f6c71d3b2\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:16.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\002464061f795f10b2ea31f166415ac7\jetified-firebase-components-16.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\002464061f795f10b2ea31f166415ac7\jetified-firebase-components-16.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6352da2278f4887fa4506d4f94107bca\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\6352da2278f4887fa4506d4f94107bca\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\c08fbd2ff03eaf1eb73b66b76b15a082\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\c08fbd2ff03eaf1eb73b66b76b15a082\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\ede779bc2682400490f54d1fd5fcec7d\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\ede779bc2682400490f54d1fd5fcec7d\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\79c1d5c82fe746b1739cbdd05686da02\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\79c1d5c82fe746b1739cbdd05686da02\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\d5c3ac55f54e7be18a5143c57b0a7ada\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\d5c3ac55f54e7be18a5143c57b0a7ada\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7eeeb2910d1096ef30c55533f294f81f\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7eeeb2910d1096ef30c55533f294f81f\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\8a422b90bfe2308ee62c0eaef9ccdad3\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\8a422b90bfe2308ee62c0eaef9ccdad3\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\b9053f481f6d09d6b0325c41025a2cd9\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\b9053f481f6d09d6b0325c41025a2cd9\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\83c1e2b3ae911aa73c899a2445cf560a\firebase-database-collection-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\83c1e2b3ae911aa73c899a2445cf560a\firebase-database-collection-17.0.0\AndroidManifest.xml:5:5-44
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest\app\src\main\AndroidManifest.xml
+activity#com.google.firebase.auth.internal.FederatedSignInActivity
+ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:24:9-31:50
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:26:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:28:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:27:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:29:13-102
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:30:13-72
+	tools:replace
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:31:13-47
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:25:13-85
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:33:9-39:19
+MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:32:9-36:35
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:32:9-36:35
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:35:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:36:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:34:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:36:13-38:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:38:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c78a11c6b4a4456334831db0797030d\firebase-auth-19.2.0\AndroidManifest.xml:37:17-109
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:25:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:25:22-76
+meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
+ADDED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:19.2.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\7c1b7712293eca3efa95a3298abb9169\firebase-database-19.2.0\AndroidManifest.xml:33:17-109
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\38f2d7e55d3a3e0124a3ebc9c79b83a2\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\cf6d9406425791c1268f492e9728c8a3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\cf6d9406425791c1268f492e9728c8a3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vili\.gradle\caches\transforms-2\files-2.1\cf6d9406425791c1268f492e9728c8a3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
