@@ -16,7 +16,6 @@ buildscript {
 }
 
 allprojects {
-    buildDir = $/C:\Users\Vili\Desktop\friendify\Androiddatabaselocationtest/$
     repositories {
         google()
         jcenter()
