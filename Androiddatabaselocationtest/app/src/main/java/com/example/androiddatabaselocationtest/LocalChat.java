@@ -46,7 +46,10 @@ public class LocalChat extends AppCompatActivity {
         final List<Message> sentMessageList = new ArrayList<>();
         mMessageRecycler = (RecyclerView) findViewById(R.id.chatRecyclerView);
         mMessageAdapter = new MessageListAdapter(this,messageList,sentMessageList);
-        mMessageRecycler.setLayoutManager(new LinearLayoutManager(this));
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        //layoutManager.setReverseLayout(true);
+        //layoutManager.setStackFromEnd(true);
+        mMessageRecycler.setLayoutManager(layoutManager);
         mMessageRecycler.setAdapter(mMessageAdapter);
 
         sendButton = findViewById(R.id.chatBtn);
@@ -70,6 +73,7 @@ public class LocalChat extends AppCompatActivity {
                             if (/*messageLocation.distanceTo(location <= 1000*/true) {
                                 messageList.add(message);
                                 mMessageAdapter.notifyDataSetChanged();
+                                layoutManager.scrollToPosition(mMessageAdapter.getItemCount()-1);
                             }
 
                         }
@@ -140,6 +144,7 @@ public class LocalChat extends AppCompatActivity {
                             mDatabaseReference.setValue(newMessage);
 
                             mMessageAdapter.notifyDataSetChanged();
+                            layoutManager.scrollToPosition(mMessageAdapter.getItemCount()-1);
                         }
                     }
                 });
