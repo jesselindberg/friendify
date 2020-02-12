@@ -67,8 +67,9 @@ public class LocalChat extends AppCompatActivity {
                             messageLocation.setLatitude(message.latitude);
                             messageLocation.setLongitude(message.longitude);
 
-                            if (messageLocation.distanceTo(location) <= 1000) {
+                            if (/*messageLocation.distanceTo(location <= 1000*/true) {
                                 messageList.add(message);
+                                mMessageAdapter.notifyDataSetChanged();
                             }
 
                         }
@@ -137,6 +138,8 @@ public class LocalChat extends AppCompatActivity {
 
                             mDatabaseReference = mDatabase.getReference().child("messages").push();
                             mDatabaseReference.setValue(newMessage);
+
+                            mMessageAdapter.notifyDataSetChanged();
                         }
                     }
                 });
