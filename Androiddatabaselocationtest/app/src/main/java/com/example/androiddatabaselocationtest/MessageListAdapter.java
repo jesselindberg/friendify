@@ -98,8 +98,6 @@ public class MessageListAdapter extends RecyclerView.Adapter {
 
         void bind(Message message) {
             messageText.setText(message.message);
-
-            // Format the stored timestamp into a readable String using method.
             timeText.setText(message.time);
         }
     }
