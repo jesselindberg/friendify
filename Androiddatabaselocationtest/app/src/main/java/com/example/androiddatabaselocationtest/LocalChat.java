@@ -35,6 +35,7 @@ public class LocalChat extends AppCompatActivity {
     private RecyclerView mMessageRecycler;
     private MessageListAdapter mMessageAdapter;
     private Button sendButton;
+    private TextView chatBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class LocalChat extends AppCompatActivity {
         mMessageRecycler.setAdapter(mMessageAdapter);
 
         sendButton = findViewById(R.id.chatBtn);
+        chatBox = findViewById(R.id.edittext_chatbox);
         mMessageReference = FirebaseDatabase.getInstance().getReference().child("messages");
 
         ChildEventListener messageListener = new ChildEventListener() {
@@ -67,11 +69,6 @@ public class LocalChat extends AppCompatActivity {
 
                             if (messageLocation.distanceTo(location) <= 1000) {
                                 messageList.add(message);
-                                System.out.println("\nReceived Messages: ");
-                                System.out.println(messageList);
-                                System.out.println("\n Sent Messages: ");
-                                System.out.println(sentMessageList);
-                                System.out.println("\n");
                             }
 
                         }
@@ -130,6 +127,7 @@ public class LocalChat extends AppCompatActivity {
                             String time = sdf.format(date);
 
                             Message newMessage = new Message(latitude,longitude,time,sendMessageEditTextView.getText().toString());
+                            sendMessageEditTextView.setText("");
                             sentMessageList.add(newMessage);
                             //messageList.add(newMessage);
 
