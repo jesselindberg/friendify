@@ -9,55 +9,119 @@
 import UIKit
 import Foundation
 
-class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseUI
+import FirebaseStorage
+
+import CoreLocation
+
+class FriendViewController: FriendifyController, UITableViewDelegate, UITableViewDataSource {
+    
+    var myLocation: [String: Any] = [:]
+    
+    var shownUserIDS:[String] = []
+    func fetchAndShowUsersFromDB() {
+        let database_reference = Database.database().reference()
+        let messagesRef = database_reference.child("locations")
+        messagesRef.observe(.childAdded) { (location_data) in
+            DispatchQueue.main.async {
+                let UID = location_data.key
+                if !(self.shownUserIDS.contains(UID)){
+                    self.updateMyCurrentLocation()
+                    let deviceLocation = CLLocation(latitude: self.myCurrentLocation.latitude, longitude: self.myCurrentLocation.longitude)
+                    guard let lat = location_data.childSnapshot(forPath: "latitude").value as? CLLocationDegrees else { return }
+                    guard let long = location_data.childSnapshot(forPath: "longitude").value as? CLLocationDegrees else { return }
+                    let messageLocation = CLLocation(latitude: lat, longitude: long)
+                    //if distance(loc1: deviceLocation, loc2: messageLocation) < VISIBILITY_RADIUS {
+                        self.shownUserIDS.append(UID)
+                        self.tableView.reloadData()
+                    //}
+                }
+            }
+        }
+    }
+    
+    func getDeviceCurrentLocation() -> CLLocation{
+        let location = CLLocation()
+        return location
+    }
+    
+    func currentTime() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: Date())
+        let yourDate = formatter.date(from: myString)
+        formatter.dateFormat = "dd-MMM HH:mm"
+        let myStringafd = formatter.string(from: yourDate!)
+        return myStringafd
+    }
+    
+    func updateDeviceLocationToDB(){
+        let ref = Database.database().reference()
+        ref.child("locations/\(myUserID)").setValue(myLocation)
+    }
+    
+    func updateLocationToDB(with_interval: Double){
+        getCurrentLocation()
+        Timer.scheduledTimer(withTimeInterval: with_interval, repeats: true) { timer in
+            self.myLocation["latitude"] = self.locationManager.location?.coordinate.latitude as Any
+            self.myLocation["longitude"] = self.locationManager.location?.coordinate.longitude as Any
+            self.myLocation["timestamp"] = self.currentTime()
+            self.updateDeviceLocationToDB()
+            print("Updated location")
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView!
-    var friendCells: [FriendCell] = []
-    
-    let exampleData: [[String:String]] = [["info":"Matti Meikäläinen, 23v, Aalto-Yliopisto, Tekniikan kandidaatti", "picture": "empty_profile.png"],
-                       ["info":"Kalle Kalamies, 26v, Aalto-Yliopisto, Diplomi-insinööri", "picture": "empty_profile.png"],
-                       ["info":"Petteri Peloton, 19v, Aalto-Yliopisto, Tekniikan ylioppilas", "picture" : "empty_profile.png"]]
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        friendCells.count
+        shownUserIDS.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        createFriendCell(tableView, cellForRowAt: indexPath, withUID: shownUserIDS[indexPath.row])
+    }
+    
+    func createFriendCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, withUID: String) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
-        cell.InfoField.text = friendCells[indexPath.row].InfoField.text
-        cell.PictureField.image = friendCells[indexPath.row].PictureField.image
+        cell.InfoField.text = ""
+        cell.PictureField?.image = UIImage(named: "empty_profile.png")
+
+        let storageRef = Storage.storage().reference()
+        let pictureReference = storageRef.child("profile/\(withUID)")
+        pictureReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print(error)
+          } else {
+            DispatchQueue.main.async{
+                cell.PictureField.image = UIImage(data: data!)!
+                self.fetchUserInfo(withUID: withUID, completionHandler: { info in
+                    cell.InfoField.text = info
+                })
+            }
+          }
+        }
         return cell
     }
     
-    func createFriendCellFrom(data: [String:String]) -> FriendCell {
-        let info = data["info"]
-        let imageName = data["picture"]!
-        let image = UIImage(named: imageName)
-        let friendCell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FriendCell
-        friendCell.InfoField.text = info!
-        friendCell.imageView?.image = image
-        return friendCell
-    }
-    
-    func transformDataToFriendCellArray(data: [[String:String]]) -> [FriendCell] {
-        var friendCells: [FriendCell] = []
-        for data in exampleData{
-            let friendCell = createFriendCellFrom(data: data)
-            friendCells.append(friendCell)
+    func fetchUserInfo(withUID: String, completionHandler:@escaping (_ info: String) -> ()) {
+        Database.database().reference().child("users/\(withUID)").observeSingleEvent(of: .value) { snapshot in
+            var info: String!
+            let userInfo = snapshot.value as? [String : AnyObject] ?? [:]
+            info = userInfo["username"] as! String
+            completionHandler(info)
         }
-        return friendCells
-    }
-    
-    func addFriendsToFriendView(friends: [FriendCell]) {
-        tableView.beginUpdates()
-        tableView.insertRows(at: [IndexPath(row: friends.count-1, section: 0)], with: .automatic)
-        tableView.endUpdates()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        friendCells = transformDataToFriendCellArray(data: exampleData)
-        addFriendsToFriendView(friends: friendCells)
+        fetchAndShowUsersFromDB()
+        updateLocationToDB(with_interval: 5.0)
+        
+        handleKeyboardShowing()
     }
 }
+
+

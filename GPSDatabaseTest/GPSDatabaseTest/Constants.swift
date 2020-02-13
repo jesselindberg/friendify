@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+let JPEG_COMPRESSION_QUALITY = 0.4
+let STORAGE_URL = "gs://ioslocationdatabase.appspot.com/"
+let VISIBILITY_RADIUS = 100.0
