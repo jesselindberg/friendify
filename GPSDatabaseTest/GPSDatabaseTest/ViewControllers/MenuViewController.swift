@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseUI
 import FirebaseStorage
+import FirebaseDatabase
 
 var name = ""
 var profilePicture: UIImage!
@@ -42,12 +43,12 @@ class MenuViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     @IBAction func saveProfile(_ sender: Any) {
         let userID = Auth.auth().currentUser!.uid
-        let storageRef = Storage.storage().reference(forURL: "gs://ioslocationdatabase.appspot.com/")
+        let storageRef = Storage.storage().reference(forURL: STORAGE_URL)
         let storageProfileRef = storageRef.child("profile").child(userID)
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         
-        guard let imageData = profilePicture.jpegData(compressionQuality: 0.4) else{
+        guard let imageData = profilePicture.jpegData(compressionQuality: CGFloat(JPEG_COMPRESSION_QUALITY)) else{
             return
         }
         
@@ -58,8 +59,13 @@ class MenuViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
         })
         
+        let ref = Database.database().reference()
+        let UID: String = (Auth.auth().currentUser?.uid)!
+        
+        
         if let nick = username.text{
             name = nick
+            ref.child("users").child(UID).setValue(["username": name])
             username.text = ""
         }
     }
