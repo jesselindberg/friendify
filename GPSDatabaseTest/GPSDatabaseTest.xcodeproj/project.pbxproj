@@ -20,6 +20,8 @@
 		878A57B9237B4F280047282E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878A57B7237B4F280047282E /* LaunchScreen.storyboard */; };
 		87ACA8BA23D3425D00C2CF14 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACA8B923D3425D00C2CF14 /* FriendViewController.swift */; };
 		87ACA8BC23D344ED00C2CF14 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACA8BB23D344ED00C2CF14 /* FriendCell.swift */; };
+		87DF65EE23F5872200442A62 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF65ED23F5872200442A62 /* Constants.swift */; };
+		87DF65F623F58A4F00442A62 /* FriendifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF65F523F58A4F00442A62 /* FriendifyController.swift */; };
 		B7DFA4B6913868BA4ACE6456 /* Pods_GPSDatabaseTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF2C60BFE64FFE92A1DEBE4 /* Pods_GPSDatabaseTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		878A57BA237B4F280047282E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87ACA8B923D3425D00C2CF14 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		87ACA8BB23D344ED00C2CF14 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		87DF65ED23F5872200442A62 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		87DF65F523F58A4F00442A62 /* FriendifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendifyController.swift; path = /Users/artturijalli/Desktop/friendify/GPSDatabaseTest/GPSDatabaseTest/ViewControllers/FriendifyController.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			children = (
 				878A57AC237B4F270047282E /* AppDelegate.swift */,
 				878A57AE237B4F270047282E /* SceneDelegate.swift */,
+				87DF65ED23F5872200442A62 /* Constants.swift */,
 				87ACA8BE23D3619500C2CF14 /* ViewControllers */,
 				87ACA8BF23D361A600C2CF14 /* Cells */,
 				872B90582380265B005BD531 /* DistanceFromCoords.swift */,
@@ -111,10 +116,11 @@
 		87ACA8BE23D3619500C2CF14 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				878A57B0237B4F270047282E /* MessageViewController.swift */,
-				87231C4F23CF76C00018638B /* MenuViewController.swift */,
-				87ACA8B923D3425D00C2CF14 /* FriendViewController.swift */,
 				873AB25523D8B0F300319462 /* LoginViewController.swift */,
+				87231C4F23CF76C00018638B /* MenuViewController.swift */,
+				878A57B0237B4F270047282E /* MessageViewController.swift */,
+				87ACA8B923D3425D00C2CF14 /* FriendViewController.swift */,
+				87DF65F523F58A4F00442A62 /* FriendifyController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -264,9 +270,11 @@
 			files = (
 				873AB25623D8B0F300319462 /* LoginViewController.swift in Sources */,
 				872B90592380265B005BD531 /* DistanceFromCoords.swift in Sources */,
+				87DF65F623F58A4F00442A62 /* FriendifyController.swift in Sources */,
 				87231C5023CF76C00018638B /* MenuViewController.swift in Sources */,
 				878A57B1237B4F270047282E /* MessageViewController.swift in Sources */,
 				87ACA8BC23D344ED00C2CF14 /* FriendCell.swift in Sources */,
+				87DF65EE23F5872200442A62 /* Constants.swift in Sources */,
 				87ACA8BA23D3425D00C2CF14 /* FriendViewController.swift in Sources */,
 				878A57AD237B4F270047282E /* AppDelegate.swift in Sources */,
 				878A57AF237B4F270047282E /* SceneDelegate.swift in Sources */,

@@ -11,17 +11,7 @@ import CoreLocation
 import FirebaseDatabase
 import CoreLocation
 
-class MessageViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
-    
-    struct Location {
-        var latitude = 0.0
-        var longitude = 0.0
-    }
-    
-    var myCurrentLocation: Location = Location()
-    
-    let messageVisibilityRadius = 100.0
-    let locationManager = CLLocationManager()
+class MessageViewController: FriendifyController, UITableViewDelegate, UITableViewDataSource {
     
     var detectedMessageIds: [String] = []
     var currentLocation: CLLocation!
@@ -64,18 +54,6 @@ class MessageViewController: UIViewController, CLLocationManagerDelegate, UITabl
         }
     }
     
-    func getCurrentTime() -> String {
-        let formatter = ISO8601DateFormatter()
-        return formatter.string(from: Date())
-    }
-    
-    func updateMyCurrentLocation() {
-        if let loc = locationManager.location{
-            myCurrentLocation.latitude = loc.coordinate.latitude
-            myCurrentLocation.longitude = loc.coordinate.longitude
-        }
-    }
-    
     //Naive implementation - this gets all the messages from the DB and filters out that aren't close enough to be shown.
     func fetchAndShowMessagesFromDB() {
         let database_reference = Database.database().reference()
@@ -88,7 +66,7 @@ class MessageViewController: UIViewController, CLLocationManagerDelegate, UITabl
                     guard let lat = message_data.childSnapshot(forPath: "latitude").value as? CLLocationDegrees else { return }
                     guard let long = message_data.childSnapshot(forPath: "longitude").value as? CLLocationDegrees else { return }
                     let messageLocation = CLLocation(latitude: lat, longitude: long)
-                    if distance(loc1: deviceLocation, loc2: messageLocation) < self.messageVisibilityRadius {
+                    if distance(loc1: deviceLocation, loc2: messageLocation) < VISIBILITY_RADIUS {
                         let message = (message_data.childSnapshot(forPath: "message").value! as! String)
                         self.allNearbyMessages.append(message)
                         self.detectedMessageIds.append(message_data.key)
@@ -99,46 +77,12 @@ class MessageViewController: UIViewController, CLLocationManagerDelegate, UITabl
         }
     }
     
-    //Calls this function when the tap is recognized.
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
-    
-    func startUpdatingMyLocation() {
-        self.locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled(){
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view here.
         startUpdatingMyLocation()
         fetchAndShowMessagesFromDB()
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        //tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
 
+        handleKeyboardShowing()
+    }
 }

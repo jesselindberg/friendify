@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/artturijalli/Desktop/friendify/GPSDatabaseTest/GPSDatabaseTest/ViewControllers/FriendifyController.swift">
+   </FileRef>
+   <FileRef
       location = "group:GPSDatabaseTest.xcodeproj">
    </FileRef>
    <FileRef
