@@ -107,10 +107,10 @@ class FriendViewController: FriendifyController, UITableViewDelegate, UITableVie
     
     func fetchUserInfo(withUID: String, completionHandler:@escaping (_ info: String) -> ()) {
         Database.database().reference().child("users/\(withUID)").observeSingleEvent(of: .value) { snapshot in
-            var info: String!
             let userInfo = snapshot.value as? [String : AnyObject] ?? [:]
-            info = userInfo["username"] as! String
-            completionHandler(info)
+            if let information = userInfo["username"]{
+                completionHandler(information as! String)
+            }
         }
     }
     
