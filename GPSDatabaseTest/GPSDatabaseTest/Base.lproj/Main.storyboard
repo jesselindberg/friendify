@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Menu View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="XSz-jf-ZIH">
             <objects>
-                <viewController storyboardIdentifier="ChatViewController" id="MVO-ZB-d8k" customClass="MenuViewController" customModule="GPSDatabaseTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="MVO-ZB-d8k" customClass="ProfileViewController" customModule="GPSDatabaseTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AQV-A4-J8p" customClass="MenuViewContoller">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,11 +23,11 @@
                                     <constraint firstAttribute="width" secondItem="3gy-IP-Zlj" secondAttribute="height" multiplier="259:51" id="Bhl-wS-h7E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="27"/>
-                                <state key="normal" title="Local chat">
+                                <state key="normal" title="Home">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="menuChatSegue" id="kew-jv-GqT"/>
+                                    <segue destination="ehk-Qa-ZXl" kind="show" id="yeg-yb-MJK"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4K-VO-Maa">
@@ -186,17 +186,16 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="hIc-2u-bkq"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mW-z3-jtE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mW-z3-jtE">
                                 <rect key="frame" x="0.0" y="752" width="414" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4mW-z3-jtE" secondAttribute="height" multiplier="207:28" id="i1W-Eb-CCh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="24"/>
-                                <state key="normal" title="Show nearby friends">
+                                <state key="normal" title="Home">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Qkg-kb-ppK" kind="show" identifier="chatToFriendView" id="oWK-FS-X17"/>
+                                    <segue destination="ehk-Qa-ZXl" kind="show" id="Tvc-RL-WC7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -227,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="779.71014492753625" y="28.794642857142854"/>
+            <point key="canvasLocation" x="816" y="29"/>
         </scene>
         <!--Friend View Controller-->
         <scene sceneID="lmY-Iz-Zxz">
@@ -291,13 +290,28 @@
                                     <outlet property="delegate" destination="Qkg-kb-ppK" id="GiW-Lf-gsU"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhe-cV-nmr">
+                                <rect key="frame" x="0.0" y="752" width="414" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bhe-cV-nmr" secondAttribute="height" multiplier="207:28" id="Bp4-jM-fGC"/>
+                                </constraints>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ehk-Qa-ZXl" kind="show" id="03e-mz-lO1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Q8U-IM-xOg" firstAttribute="trailing" secondItem="tIP-yU-609" secondAttribute="trailing" id="035-oV-mVa"/>
                             <constraint firstItem="Q8U-IM-xOg" firstAttribute="leading" secondItem="tIP-yU-609" secondAttribute="leading" id="DMa-BK-CGR"/>
+                            <constraint firstItem="bhe-cV-nmr" firstAttribute="trailing" secondItem="tIP-yU-609" secondAttribute="trailing" id="WNa-Uc-flv"/>
                             <constraint firstItem="tIP-yU-609" firstAttribute="bottom" secondItem="Q8U-IM-xOg" secondAttribute="bottom" constant="118" id="bIe-T1-Bz7"/>
                             <constraint firstItem="Q8U-IM-xOg" firstAttribute="top" secondItem="tIP-yU-609" secondAttribute="top" id="j5h-Ho-Gss"/>
+                            <constraint firstItem="bhe-cV-nmr" firstAttribute="leading" secondItem="tIP-yU-609" secondAttribute="leading" id="p2S-v9-MEs"/>
+                            <constraint firstItem="bhe-cV-nmr" firstAttribute="bottom" secondItem="tIP-yU-609" secondAttribute="bottom" id="rSc-hB-S9D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tIP-yU-609"/>
                     </view>
@@ -315,11 +329,11 @@
             <objects>
                 <viewController id="eYq-lz-yF1" customClass="LoginViewController" customModule="GPSDatabaseTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WsF-Jk-ydb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friendify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toH-5R-6Cx">
-                                <rect key="frame" x="71" y="94" width="272" height="67"/>
+                                <rect key="frame" x="71" y="50" width="272" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="toH-5R-6Cx" secondAttribute="height" multiplier="272:67" id="WZJ-K9-PdV"/>
                                 </constraints>
@@ -328,7 +342,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qb-83-lqx">
-                                <rect key="frame" x="46" y="814" width="323" height="41"/>
+                                <rect key="frame" x="46" y="760" width="323" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0Qb-83-lqx" secondAttribute="height" multiplier="323:41" id="EoI-el-Ivk"/>
                                 </constraints>
@@ -341,7 +355,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="handshake" translatesAutoresizingMaskIntoConstraints="NO" id="OUz-Xh-gia">
-                                <rect key="frame" x="46" y="287" width="323" height="323"/>
+                                <rect key="frame" x="46" y="243" width="323" height="323"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OUz-Xh-gia" secondAttribute="height" multiplier="1:1" id="oeV-oH-Amz"/>
                                 </constraints>
@@ -361,17 +375,106 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CPw-2h-e8e"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kRv-Dp-rUc"/>
                     <connections>
-                        <segue destination="MVO-ZB-d8k" kind="show" identifier="LoginToMenu" id="JLc-LS-aof"/>
+                        <segue destination="ehk-Qa-ZXl" kind="show" identifier="LoginToMainMenu" id="4uc-Ue-yUt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBK-eN-xfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1301.449275362319" y="28.794642857142854"/>
+            <point key="canvasLocation" x="-1371" y="29"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="MW5-mP-Ni7">
+            <objects>
+                <viewController id="ehk-Qa-ZXl" customClass="MainMenuViewController" customModule="GPSDatabaseTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WiM-XP-a6W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friendify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jed-4C-BbM">
+                                <rect key="frame" x="115" y="401.5" width="184" height="39"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="34"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EC5-s9-51t">
+                                <rect key="frame" x="96" y="448.5" width="222" height="35"/>
+                                <color key="backgroundColor" red="0.0" green="0.30196079609999998" blue="0.49803921579999999" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="20"/>
+                                <state key="normal" title="Local Chat"/>
+                                <connections>
+                                    <action selector="LocalChatButton:" destination="ehk-Qa-ZXl" eventType="touchUpInside" id="mKJ-FL-BqV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i29-v0-vug">
+                                <rect key="frame" x="96" y="491.5" width="222" height="35"/>
+                                <color key="backgroundColor" red="0.0" green="0.30196079609999998" blue="0.49803921579999999" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="20"/>
+                                <state key="normal" title="Meet Friends"/>
+                                <connections>
+                                    <action selector="MeetFriendsButton:" destination="ehk-Qa-ZXl" eventType="touchUpInside" id="PxV-lY-1oV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7G-mq-ZFX">
+                                <rect key="frame" x="147" y="20" width="120" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="hgU-Hy-bFb"/>
+                                    <constraint firstAttribute="width" secondItem="y7G-mq-ZFX" secondAttribute="height" multiplier="24:23" id="pCb-q8-DRX"/>
+                                    <constraint firstAttribute="height" constant="115" id="x5N-Q2-NpK"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="empty_profile"/>
+                                <connections>
+                                    <action selector="ProfileButton:" destination="ehk-Qa-ZXl" eventType="touchUpInside" id="ccZ-ds-CqC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bne-dH-jDC">
+                                <rect key="frame" x="137" y="740" width="141" height="35"/>
+                                <color key="backgroundColor" red="0.0" green="0.30196079609999998" blue="0.49803921579999999" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="20"/>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="SignOutButton:" destination="ehk-Qa-ZXl" eventType="touchUpInside" id="rnM-iv-FuX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i29-v0-vug" firstAttribute="top" secondItem="EC5-s9-51t" secondAttribute="bottom" constant="8" id="7th-JQ-2kf"/>
+                            <constraint firstItem="hhU-4F-z9f" firstAttribute="trailing" secondItem="EC5-s9-51t" secondAttribute="trailing" constant="96" id="9rO-dk-ERw"/>
+                            <constraint firstItem="EC5-s9-51t" firstAttribute="top" secondItem="Jed-4C-BbM" secondAttribute="bottom" constant="8" id="BUk-om-O3S"/>
+                            <constraint firstItem="hhU-4F-z9f" firstAttribute="trailing" secondItem="i29-v0-vug" secondAttribute="trailing" constant="96" id="H7j-dy-3GV"/>
+                            <constraint firstItem="EC5-s9-51t" firstAttribute="leading" secondItem="hhU-4F-z9f" secondAttribute="leading" constant="96" id="LFP-63-snM"/>
+                            <constraint firstItem="hhU-4F-z9f" firstAttribute="bottom" secondItem="bne-dH-jDC" secondAttribute="bottom" constant="33" id="NSm-J3-TLU"/>
+                            <constraint firstItem="y7G-mq-ZFX" firstAttribute="leading" secondItem="hhU-4F-z9f" secondAttribute="leading" constant="147" id="TUA-OU-W55"/>
+                            <constraint firstItem="hhU-4F-z9f" firstAttribute="trailing" secondItem="bne-dH-jDC" secondAttribute="trailing" constant="136" id="TWD-1w-oAT"/>
+                            <constraint firstItem="i29-v0-vug" firstAttribute="leading" secondItem="hhU-4F-z9f" secondAttribute="leading" constant="96" id="TlA-0G-KPR"/>
+                            <constraint firstItem="bne-dH-jDC" firstAttribute="leading" secondItem="hhU-4F-z9f" secondAttribute="leading" constant="137" id="YDg-M6-ayW"/>
+                            <constraint firstItem="hhU-4F-z9f" firstAttribute="trailing" secondItem="y7G-mq-ZFX" secondAttribute="trailing" constant="147" id="b7a-KF-28J"/>
+                            <constraint firstItem="Jed-4C-BbM" firstAttribute="centerY" secondItem="WiM-XP-a6W" secondAttribute="centerY" id="rvw-AT-lKT"/>
+                            <constraint firstItem="Jed-4C-BbM" firstAttribute="centerX" secondItem="WiM-XP-a6W" secondAttribute="centerX" id="tPF-qh-s9J"/>
+                            <constraint firstItem="y7G-mq-ZFX" firstAttribute="top" secondItem="hhU-4F-z9f" secondAttribute="top" constant="20" id="uTW-al-VUS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hhU-4F-z9f"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="epu-zz-5CE"/>
+                    <connections>
+                        <segue destination="MVO-ZB-d8k" kind="show" identifier="MainMenuToProfile" id="Z4x-UF-eL7"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="MainMenuToMessage" id="7OE-vt-Q60"/>
+                        <segue destination="Qkg-kb-ppK" kind="show" identifier="MainMenuToFriend" id="tAD-zd-DXL"/>
+                        <segue destination="eYq-lz-yF1" kind="show" identifier="MainMenuToLogin" id="3q9-eG-Ljr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9i4-iq-I53" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-291.304347826087" y="-688.39285714285711"/>
         </scene>
     </scenes>
     <resources>
         <image name="empty_profile" width="341" height="342"/>
         <image name="handshake" width="900" height="643"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="03e-mz-lO1"/>
+    </inferredMetricsTieBreakers>
 </document>

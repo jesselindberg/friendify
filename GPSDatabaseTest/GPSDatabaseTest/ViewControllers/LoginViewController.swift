@@ -13,7 +13,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
 
     @IBAction func loginAction(_ sender: Any) {
         if userDefault.bool(forKey: "usersignedin") {
-            performSegue(withIdentifier: "LoginToMenu", sender: self)
+            performSegue(withIdentifier: "LoginToMainMenu", sender: self)
         }
         let authUI = FUIAuth.defaultAuthUI()
         
@@ -31,11 +31,12 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         //  Check if there was an error
         guard error == nil else {
             print(error?.localizedDescription as Any)
-            userDefault.set(true, forKey: "usersignedin")
+            userDefault.set(false, forKey: "usersignedin")
             userDefault.synchronize()
             return
         }
-        performSegue(withIdentifier: "LoginToMenu", sender: self)
+        userDefault.set(true, forKey: "usersignedin")
+        performSegue(withIdentifier: "LoginToMainMenu", sender: self)
     }
     
     override func viewDidLoad() {

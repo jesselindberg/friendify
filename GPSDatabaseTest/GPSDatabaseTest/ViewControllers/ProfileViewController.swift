@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  ProfileViewController.swift
 //  GPSDatabaseTest
 //
 //  Created by Artturi Jalli on 15/01/2020.
@@ -15,7 +15,7 @@ import FirebaseDatabase
 var name = ""
 var profilePicture: UIImage!
 
-class MenuViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FUIAuthDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FUIAuthDelegate {
 
     @IBOutlet weak var username: UITextField!
     
