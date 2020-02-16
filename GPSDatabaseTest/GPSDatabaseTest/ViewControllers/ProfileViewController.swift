@@ -52,6 +52,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             return
         }
         
+        saveProfilePicToUD(imageData: imageData)
+                
         storageProfileRef.putData(imageData, metadata: metadata, completion: {(storageMetadata, error) in
             if error != nil{
                 print(error.debugDescription)
@@ -69,8 +71,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             username.text = ""
         }
     }
+    
+    func saveProfilePicToUD(imageData: Data){
+        UserDefaults().set(imageData, forKey: PROFILE_PICTURE_ID)
+    }
+    
+    func getProfilePicFromUD(){
+        if let pic_data = UserDefaults.standard.object(forKey: PROFILE_PICTURE_ID){
+            profilePictureVIew.image = UIImage(data: pic_data as! Data, scale:1.0)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getProfilePicFromUD()
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
