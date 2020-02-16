@@ -12,7 +12,6 @@ import FirebaseUI
 import FirebaseStorage
 import FirebaseDatabase
 
-var name = ""
 var profilePicture: UIImage!
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FUIAuthDelegate {
@@ -65,8 +64,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let UID: String = (Auth.auth().currentUser?.uid)!
         
         
-        if let nick = username.text{
-            name = nick
+        if let name = username.text{
+            saveUserNameToUD(name: name)
             ref.child("users").child(UID).setValue(["username": name])
             username.text = ""
         }
@@ -78,12 +77,25 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func getProfilePicFromUD(){
         if let pic_data = UserDefaults.standard.object(forKey: PROFILE_PICTURE_ID){
-            profilePictureVIew.image = UIImage(data: pic_data as! Data, scale:1.0)
+            let picture = UIImage(data: pic_data as! Data, scale:1.0)
+            profilePictureVIew.image = picture
+            profilePicture = picture
+        }
+    }
+    
+    func saveUserNameToUD(name: String){
+        UserDefaults.standard.set(name, forKey: USER_NAME_ID)
+    }
+    
+    func getUserNameFromUD(){
+        if let name = UserDefaults.standard.string(forKey: USER_NAME_ID){
+            username.text = name
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserNameFromUD()
         getProfilePicFromUD()
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
