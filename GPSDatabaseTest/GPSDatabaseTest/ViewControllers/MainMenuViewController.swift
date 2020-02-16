@@ -27,8 +27,6 @@ class MainMenuViewController: UIViewController, FUIAuthDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Current user: ")
-        print(Auth.auth().currentUser)
         // Do any additional setup after loading the view.
     }
     
