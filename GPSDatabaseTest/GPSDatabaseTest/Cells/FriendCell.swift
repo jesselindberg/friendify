@@ -12,6 +12,27 @@ class FriendCell: UITableViewCell {
 
     @IBOutlet weak var PictureField: UIImageView!
     @IBOutlet weak var InfoField: UITextView!
+    @IBAction func SaveFriend(_ sender: Any) {
+        storeUIDLocally()
+    }
+    var UID: String!
+    
+    var UIDArray: [String] {
+        get {
+            return UserDefaults.standard.array(forKey: SAVED_FRIENDS_UIDS) as? [String] ?? []
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: SAVED_FRIENDS_UIDS)
+        }
+    }
+    
+    func storeUIDLocally(){
+        if let uid = UID{
+            if !UIDArray.contains(uid){
+                UIDArray.append(uid)
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

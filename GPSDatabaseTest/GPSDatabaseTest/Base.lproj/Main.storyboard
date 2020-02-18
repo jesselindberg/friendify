@@ -258,24 +258,39 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Matti Mikälienen, 23v, Aalto Yliopisto" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PUd-Df-MuK">
-                                                    <rect key="frame" x="156" y="22" width="240" height="128"/>
+                                                    <rect key="frame" x="156" y="22" width="184" height="128"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="PUd-Df-MuK" secondAttribute="height" multiplier="15:8" id="y8G-tR-2m7"/>
+                                                        <constraint firstAttribute="width" secondItem="PUd-Df-MuK" secondAttribute="height" multiplier="23:16" id="cs4-LE-LH1"/>
                                                     </constraints>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZY-ys-E0A">
+                                                    <rect key="frame" x="348" y="69" width="40" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="dZY-ys-E0A" secondAttribute="height" multiplier="20:17" id="9Jd-Xp-MCz"/>
+                                                    </constraints>
+                                                    <color key="tintColor" red="0.76078432799999995" green="0.87450981139999995" blue="0.89019608500000003" alpha="1" colorSpace="deviceRGB"/>
+                                                    <state key="normal" title="Save"/>
+                                                    <connections>
+                                                        <action selector="SaveFriend:" destination="AiG-Lo-hs1" eventType="touchUpInside" id="U1Z-vb-a8R"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PUd-Df-MuK" secondAttribute="bottom" constant="11" id="06o-cw-lrc"/>
                                                 <constraint firstItem="7xp-e9-nJz" firstAttribute="top" secondItem="7Dm-bN-Nqi" secondAttribute="topMargin" constant="11" id="3D2-7b-wpC"/>
-                                                <constraint firstAttribute="bottom" secondItem="PUd-Df-MuK" secondAttribute="bottom" constant="22" id="CWd-8k-0Jo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dZY-ys-E0A" secondAttribute="bottom" constant="58" id="ANG-p7-khc"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="7xp-e9-nJz" secondAttribute="bottom" constant="11" id="CXM-mi-Yc4"/>
-                                                <constraint firstItem="PUd-Df-MuK" firstAttribute="top" secondItem="7Dm-bN-Nqi" secondAttribute="top" constant="22" id="NLd-aZ-GaR"/>
+                                                <constraint firstItem="dZY-ys-E0A" firstAttribute="leading" secondItem="PUd-Df-MuK" secondAttribute="trailing" constant="8" id="N6P-fr-1PL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PUd-Df-MuK" secondAttribute="trailing" constant="54" id="R0G-fV-QSQ"/>
+                                                <constraint firstItem="dZY-ys-E0A" firstAttribute="top" secondItem="7Dm-bN-Nqi" secondAttribute="topMargin" constant="58" id="XNK-tT-Mi5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dZY-ys-E0A" secondAttribute="trailing" constant="6" id="adb-hs-VUp"/>
                                                 <constraint firstItem="7xp-e9-nJz" firstAttribute="leading" secondItem="7Dm-bN-Nqi" secondAttribute="leadingMargin" id="cSS-Sj-0Vv"/>
-                                                <constraint firstAttribute="trailing" secondItem="PUd-Df-MuK" secondAttribute="trailing" constant="18" id="kdI-VT-tK1"/>
-                                                <constraint firstItem="PUd-Df-MuK" firstAttribute="leading" secondItem="7xp-e9-nJz" secondAttribute="trailing" constant="8" id="xKT-Cj-1Qn"/>
+                                                <constraint firstItem="PUd-Df-MuK" firstAttribute="top" secondItem="7Dm-bN-Nqi" secondAttribute="topMargin" constant="11" id="lCM-NG-Aay"/>
+                                                <constraint firstItem="PUd-Df-MuK" firstAttribute="leading" secondItem="7xp-e9-nJz" secondAttribute="trailing" constant="8" id="oP6-Yq-Gnb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>

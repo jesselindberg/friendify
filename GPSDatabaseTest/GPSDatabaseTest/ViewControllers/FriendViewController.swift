@@ -98,6 +98,7 @@ class FriendViewController: FriendifyController, UITableViewDelegate, UITableVie
                 cell.PictureField.image = UIImage(data: data!)!
                 self.fetchUserInfo(withUID: withUID, completionHandler: { info in
                     cell.InfoField.text = info
+                    cell.UID = withUID
                 })
             }
           }
