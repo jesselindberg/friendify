@@ -120,8 +120,27 @@ class FriendViewController: FriendifyController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         fetchAndShowUsersFromDB()
         updateLocationToDB(with_interval: 5.0)
-        
+        handleSwipe()
         handleKeyboardShowing()
+    }
+    
+    func handleSwipe(){
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        swipe.direction = .right
+        view.addGestureRecognizer(swipe)
+    }
+}
+
+extension UIViewController{
+    @objc func swipeAction(swipe: UISwipeGestureRecognizer){
+        switch swipe.direction.rawValue {
+        case 2:
+            performSegue(withIdentifier: "ChatToFriend", sender: self)
+        case 1:
+            performSegue(withIdentifier: "FriendToChat", sender: self)
+        default:
+            break
+        }
     }
 }
 
