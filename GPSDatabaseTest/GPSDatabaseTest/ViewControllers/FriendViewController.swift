@@ -126,7 +126,7 @@ class FriendViewController: FriendifyController, UITableViewDelegate, UITableVie
     
     func handleSwipe(){
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
-        swipe.direction = .right
+        swipe.direction = .left
         view.addGestureRecognizer(swipe)
     }
 }
@@ -134,9 +134,9 @@ class FriendViewController: FriendifyController, UITableViewDelegate, UITableVie
 extension UIViewController{
     @objc func swipeAction(swipe: UISwipeGestureRecognizer){
         switch swipe.direction.rawValue {
-        case 2:
-            performSegue(withIdentifier: "ChatToFriend", sender: self)
         case 1:
+            performSegue(withIdentifier: "ChatToFriend", sender: self)
+        case 2:
             performSegue(withIdentifier: "FriendToChat", sender: self)
         default:
             break
