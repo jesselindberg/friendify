@@ -98,6 +98,7 @@ class FriendViewController: FriendifyController, UITableViewDelegate, UITableVie
                 cell.PictureField.image = UIImage(data: data!)!
                 self.fetchUserInfo(withUID: withUID, completionHandler: { info in
                     cell.InfoField.text = info
+                    cell.UID = withUID
                 })
             }
           }
@@ -119,8 +120,27 @@ class FriendViewController: FriendifyController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         fetchAndShowUsersFromDB()
         updateLocationToDB(with_interval: 5.0)
-        
+        handleSwipe()
         handleKeyboardShowing()
+    }
+    
+    func handleSwipe(){
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        swipe.direction = .left
+        view.addGestureRecognizer(swipe)
+    }
+}
+
+extension UIViewController{
+    @objc func swipeAction(swipe: UISwipeGestureRecognizer){
+        switch swipe.direction.rawValue {
+        case 1:
+            performSegue(withIdentifier: "ChatToFriend", sender: self)
+        case 2:
+            performSegue(withIdentifier: "FriendToChat", sender: self)
+        default:
+            break
+        }
     }
 }
 

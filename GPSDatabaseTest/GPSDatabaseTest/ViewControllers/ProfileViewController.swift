@@ -17,9 +17,13 @@ var profilePicture: UIImage!
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FUIAuthDelegate {
 
     @IBOutlet weak var username: UITextField!
+    @IBAction func logout(_ sender: Any) {
+        logout()
+    }
     
     @IBAction func selectImage(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
+        imagePickerController.allowsEditing = true
         imagePickerController.delegate = self
         
         let actionSheet = UIAlertController(title: "Photo source", message: "Choose a source", preferredStyle: .actionSheet)
@@ -113,8 +117,24 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         view.endEditing(true)
     }
     
+    func logout(){
+        try! Auth.auth().signOut()
+        userDefault.set(false, forKey: "usersignedin")
+        performSegue(withIdentifier: "ProfileToLogin", sender: self)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        var image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        if let img = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        {
+            image = img
+
+        }
+        else if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        {
+            image = img
+        }
+        picker.dismiss(animated: true,completion: nil)
         profilePictureVIew.image = image
         profilePicture = image
         picker.dismiss(animated: true, completion: nil)

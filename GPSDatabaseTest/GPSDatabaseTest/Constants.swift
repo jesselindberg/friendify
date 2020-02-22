@@ -13,3 +13,4 @@ let STORAGE_URL = "gs://ioslocationdatabase.appspot.com/"
 let VISIBILITY_RADIUS = 100.0
 let PROFILE_PICTURE_ID = "profilePicture"
 let USER_NAME_ID = "username"
+let SAVED_FRIENDS_UIDS = "savedFriends"

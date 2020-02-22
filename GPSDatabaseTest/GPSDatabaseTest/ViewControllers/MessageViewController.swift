@@ -82,7 +82,13 @@ class MessageViewController: FriendifyController, UITableViewDelegate, UITableVi
         // Do any additional setup after loading the view here.
         startUpdatingMyLocation()
         fetchAndShowMessagesFromDB()
-
+        handleSwipe()
         handleKeyboardShowing()
+    }
+    
+    func handleSwipe(){
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        swipe.direction = .right
+        view.addGestureRecognizer(swipe)
     }
 }

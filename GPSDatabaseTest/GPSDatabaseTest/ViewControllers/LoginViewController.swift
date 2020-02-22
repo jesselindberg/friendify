@@ -13,7 +13,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
 
     @IBAction func loginAction(_ sender: Any) {
         if userDefault.bool(forKey: "usersignedin") {
-            performSegue(withIdentifier: "LoginToMainMenu", sender: self)
+            performSegue(withIdentifier: "LoginToFriendView", sender: self)
         }
         let authUI = FUIAuth.defaultAuthUI()
         
@@ -36,7 +36,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
             return
         }
         userDefault.set(true, forKey: "usersignedin")
-        performSegue(withIdentifier: "LoginToMainMenu", sender: self)
+        performSegue(withIdentifier: "LoginToFriendView", sender: self)
     }
     
     override func viewDidLoad() {
