@@ -135,10 +135,7 @@ public class LocalChat extends AppCompatActivity {
 
 
                             FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-                            DatabaseReference mDatabaseReference;
-
-                            mDatabaseReference = mDatabase.getReference().child("messages").push();
-                            mDatabaseReference.setValue(newMessage);
+                            mDatabase.getReference().child("messages/uID").setValue(newMessage); //uID pitää hoitaa jostain
                         }
                     }
                 });
