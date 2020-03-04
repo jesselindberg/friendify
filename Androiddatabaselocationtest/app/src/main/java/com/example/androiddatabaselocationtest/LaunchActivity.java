@@ -1,5 +1,6 @@
 package com.example.androiddatabaselocationtest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,12 +9,35 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class LaunchActivity extends AppCompatActivity {
+
+    FirebaseAuth mAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if(firebaseAuth.getCurrentUser() == null) {
+                    startActivity(new Intent(LaunchActivity.this, SignInActivity.class));
+                }
+            }
+        };
 
         final TextView launchActivityNameTextView = findViewById(R.id.launchActivityNameTxt);
 
@@ -35,5 +59,19 @@ public class LaunchActivity extends AppCompatActivity {
             }
         });
 
+        final Button signOutButton = (Button) findViewById(R.id.signOutBtn);
+        signOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseUser user = mAuth.getCurrentUser();
+                if(user != null) {
+                    mAuth.signOut();
+                } else {
+
+                }
+            }
+        });
+
     }
+
 }

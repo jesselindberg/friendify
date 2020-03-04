@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android database location test</string>
+    <string name="signIn">Welcome to Friendify</string>
+    <string name="signOut">Sign out</string>
 </resources>
