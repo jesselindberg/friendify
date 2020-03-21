@@ -36,6 +36,7 @@ public class LocalChat extends AppCompatActivity {
     private MessageListAdapter mMessageAdapter;
     private Button sendButton;
     private TextView chatBox;
+    private TextView sendMessageEditTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +50,14 @@ public class LocalChat extends AppCompatActivity {
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         //layoutManager.setReverseLayout(true);
         //layoutManager.setStackFromEnd(true);
+        layoutManager.setSmoothScrollbarEnabled(true);
         mMessageRecycler.setLayoutManager(layoutManager);
         mMessageRecycler.setAdapter(mMessageAdapter);
 
         sendButton = findViewById(R.id.chatBtn);
         chatBox = findViewById(R.id.edittext_chatbox);
         mMessageReference = FirebaseDatabase.getInstance().getReference().child("messages");
+        sendMessageEditTextView =  (TextView) findViewById(R.id.edittext_chatbox);
 
         ChildEventListener messageListener = new ChildEventListener() {
             @Override
@@ -109,45 +112,47 @@ public class LocalChat extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                final String text = sendMessageEditTextView.getText().toString();
+                if (text.trim().length() > 0) {
 
-                FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(LocalChat.this);
-                fusedLocationClient.getLastLocation().addOnSuccessListener(LocalChat.this, new OnSuccessListener<Location>() {
-                    @Override
-                    public void onSuccess(Location location) {
-                        if (location != null) {
-                            TextView sendMessageEditTextView = (TextView) findViewById(R.id.edittext_chatbox);
-                            Double latitude = location.getLatitude();
-                            Double longitude = location.getLongitude();
+                    FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(LocalChat.this);
+                    fusedLocationClient.getLastLocation().addOnSuccessListener(LocalChat.this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            if (location != null) {
+                                Double latitude = location.getLatitude();
+                                Double longitude = location.getLongitude();
 
-                            // Get current time in ISO 8601 format
-                            // Input
-                            Calendar calendar = Calendar.getInstance();
-                            calendar.set(Calendar.MILLISECOND, 0);
-                            Date date = calendar.getTime();
+                                // Get current time in ISO 8601 format
+                                // Input
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.set(Calendar.MILLISECOND, 0);
+                                Date date = calendar.getTime();
 
-                            // Conversion
-                            SimpleDateFormat sdf;
-                            sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-                            sdf.setTimeZone(TimeZone.getTimeZone("CET"));
-                            String time = sdf.format(date);
+                                // Conversion
+                                SimpleDateFormat sdf;
+                                sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+                                sdf.setTimeZone(TimeZone.getTimeZone("CET"));
+                                String time = sdf.format(date);
 
-                            Message newMessage = new Message(latitude,longitude,time,sendMessageEditTextView.getText().toString());
-                            sendMessageEditTextView.setText("");
-                            sentMessageList.add(newMessage);
-                            //messageList.add(newMessage);
+                                Message newMessage = new Message(latitude, longitude, time, text);
+                                sendMessageEditTextView.setText("");
+                                sentMessageList.add(newMessage);
+                                //messageList.add(newMessage);
 
 
-                            FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-                            DatabaseReference mDatabaseReference;
+                                FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+                                DatabaseReference mDatabaseReference;
 
-                            mDatabaseReference = mDatabase.getReference().child("messages").push();
-                            mDatabaseReference.setValue(newMessage);
+                                mDatabaseReference = mDatabase.getReference().child("messages").push();
+                                mDatabaseReference.setValue(newMessage);
 
-                            mMessageAdapter.notifyDataSetChanged();
-                            layoutManager.scrollToPosition(mMessageAdapter.getItemCount()-1);
+                                mMessageAdapter.notifyDataSetChanged();
+                                layoutManager.scrollToPosition(mMessageAdapter.getItemCount() - 1);
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
 
