@@ -29,14 +29,15 @@
 
             <TextView
                 android:id="@+id/nameTextView"
-                android:text="Name"
+                android:text="First Name"
                 android:layout_toRightOf="@id/nameImageView"
                 style="@style/profileDetailsTextMain" />
 
             <EditText
-                android:text="developer"
+                android:id="@+id/editTxtFirstName"
+                style="@style/profileDetailsMiniText"
                 android:layout_toRightOf="@id/nameImageView"
-                style="@style/profileDetailsMiniText" />
+                android:hint="First Name" />
 
         </RelativeLayout>
 
@@ -48,14 +49,15 @@
                 style="@style/profileDetailsImage" />
 
             <TextView
-                android:text="Mobile"
+                android:text="Last name"
                 android:layout_toRightOf="@id/mobileImageView"
-                style="@style/profileDetailsTextMain"/>
+                style="@style/profileDetailsTextMain" />
 
             <EditText
-                android:text="+91-8129999999"
+                android:id="@+id/editTxtLastName"
+                style="@style/profileDetailsMiniText"
                 android:layout_toRightOf="@id/mobileImageView"
-                style="@style/profileDetailsMiniText" />
+                android:hint="Last Name" />
 
         </RelativeLayout>
 
@@ -67,52 +69,35 @@
                 style="@style/profileDetailsImage" />
 
             <TextView
-                android:text="Email"
+                android:text="Nickname"
                 android:layout_toRightOf="@id/emailImageView"
                 style="@style/profileDetailsTextMain" />
 
             <EditText
-                android:text="developer@appsnipp.com"
+                android:id="@+id/editTxtNickname"
+                style="@style/profileDetailsMiniText"
                 android:layout_toRightOf="@id/emailImageView"
-                style="@style/profileDetailsMiniText" />
+                android:hint="Nickname" />
 
         </RelativeLayout>
 
         <View style="@style/proifleDetailsView" />
         <RelativeLayout style="@style/profileDetailsLayout">
             <ImageView
-                android:id="@+id/addressImageView"
-                android:src="@drawable/ic_address"
+                android:id="@+id/imageViewInfo"
+                android:src="@drawable/ic_email"
                 style="@style/profileDetailsImage" />
 
             <TextView
-                android:text="Address"
-                android:layout_toRightOf="@id/addressImageView"
+                android:text="Info"
+                android:layout_toRightOf="@id/imageViewInfo"
                 style="@style/profileDetailsTextMain" />
 
             <EditText
-                android:text="Avenue 2nd Street NW SY."
-                android:layout_toRightOf="@id/addressImageView"
-                style="@style/profileDetailsMiniText" />
-
-        </RelativeLayout>
-
-        <View style="@style/proifleDetailsView" />
-        <RelativeLayout style="@style/profileDetailsLayout">
-            <ImageView
-                android:id="@+id/dobImageView"
-                android:src="@drawable/ic_dob"
-                style="@style/profileDetailsImage" />
-
-            <TextView
-                android:text="D.O.B"
-                android:layout_toRightOf="@id/dobImageView"
-                style="@style/profileDetailsTextMain" />
-
-            <EditText
-                android:text="12-05-1990"
-                android:layout_toRightOf="@id/dobImageView"
-                style="@style/profileDetailsMiniText" />
+                android:id="@+id/editTxtInfo"
+                style="@style/profileDetailsMiniText"
+                android:layout_toRightOf="@id/imageViewInfo"
+                android:hint="Info" />
 
         </RelativeLayout>
 
