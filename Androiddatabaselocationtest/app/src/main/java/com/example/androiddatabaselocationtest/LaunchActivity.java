@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LaunchActivity extends AppCompatActivity {
 
@@ -63,12 +63,7 @@ public class LaunchActivity extends AppCompatActivity {
         signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseUser user = mAuth.getCurrentUser();
-                if(user != null) {
-                    mAuth.signOut();
-                } else {
-
-                }
+                signOut();
             }
         });
 
@@ -81,6 +76,11 @@ public class LaunchActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void signOut() {
+        mAuth.signOut();
+        LoginManager.getInstance().logOut();
     }
 
 }

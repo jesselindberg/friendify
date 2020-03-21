@@ -2,8 +2,11 @@
     <string name="app_name">Android database location test</string>
     <string name="signIn">Welcome to Friendify</string>
     <string name="signOut">Sign out</string>
-
+    
     <!--strings for profile-->
     <string name="title_activity_profile">Profile</string>
     <string name="action_settings">Settings</string>
+
+    <string name="facebook_app_id">217012102775679</string>
+    <string name="fb_login_protocol_scheme">fb217012102775679</string>
 </resources>
