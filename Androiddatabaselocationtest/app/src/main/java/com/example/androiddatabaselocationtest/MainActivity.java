@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         messagesTextView = findViewById(R.id.messagesTextView);
         mMessageReference = FirebaseDatabase.getInstance().getReference().child("messages");
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser curUser = mAuth.getCurrentUser();
+        final String uID = curUser.getUid();
 
 
         ValueEventListener messageListener = new ValueEventListener() {
@@ -191,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
                             sdf.setTimeZone(TimeZone.getTimeZone("CET"));
                             String time = sdf.format(date);
 
-                            Message newMessage = new Message(latitude,longitude,time,sendMessageEditTextView.getText().toString());
+                            Message newMessage = new Message(latitude,longitude,time,sendMessageEditTextView.getText().toString(), uID);
 
                             FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
                             DatabaseReference mDatabaseReference;

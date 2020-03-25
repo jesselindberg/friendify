@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.signature.ObjectKey;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -65,7 +66,6 @@ public class ProfileActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         uID = user.getUid();
-        uID = "GWANMHWhZMWFO2qPOU4eEZiOnt43";
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -76,13 +76,19 @@ public class ProfileActivity extends AppCompatActivity {
         storageReference.getMetadata().addOnSuccessListener(new OnSuccessListener<StorageMetadata>() {
             @Override
             public void onSuccess(StorageMetadata storageMetadata) {
-                GlideApp.with(ProfileActivity.this)
+                Glide.with(ProfileActivity.this)
                         .load((storageReference))
                         .placeholder(R.drawable.profile_round)
                         .signature(new ObjectKey(storageMetadata.getUpdatedTimeMillis()))
                         .into(profileImage);
             }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                // File not found, do something here?
+            }
         });
+
 
 
         // Get user data
@@ -90,12 +96,15 @@ public class ProfileActivity extends AppCompatActivity {
         ValueEventListener userDataListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                nameField.setText(user.f_name + " " + user.l_name);
-                firstNameField.setText(user.f_name);
-                lastNameField.setText(user.l_name);
-                nicknameField.setText(user.username);
-                infoField.setText(user.info);
+                if (dataSnapshot.exists()) {
+                    User user = dataSnapshot.getValue(User.class);
+                    nameField.setText(user.f_name + " " + user.l_name);
+                    firstNameField.setText(user.f_name);
+                    lastNameField.setText(user.l_name);
+                    nicknameField.setText(user.username);
+                    infoField.setText(user.info);
+                }
+
             }
 
             @Override

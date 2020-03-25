@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,6 +39,7 @@ public class LocalChat extends AppCompatActivity {
     private Button sendButton;
     private TextView chatBox;
     private TextView sendMessageEditTextView;
+    private DatabaseReference mUserReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +47,8 @@ public class LocalChat extends AppCompatActivity {
         setContentView(R.layout.activity_local_chat);
 
         final List<Message> messageList = new ArrayList<>();
-        final List<Message> sentMessageList = new ArrayList<>();
         mMessageRecycler = (RecyclerView) findViewById(R.id.chatRecyclerView);
-        mMessageAdapter = new MessageListAdapter(this,messageList,sentMessageList);
+        mMessageAdapter = new MessageListAdapter(this,messageList);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         //layoutManager.setReverseLayout(true);
         //layoutManager.setStackFromEnd(true);
@@ -58,6 +60,12 @@ public class LocalChat extends AppCompatActivity {
         chatBox = findViewById(R.id.edittext_chatbox);
         mMessageReference = FirebaseDatabase.getInstance().getReference().child("messages");
         sendMessageEditTextView =  (TextView) findViewById(R.id.edittext_chatbox);
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser curUser = mAuth.getCurrentUser();
+        final String uID = curUser.getUid();
+
+
 
         ChildEventListener messageListener = new ChildEventListener() {
             @Override
@@ -135,9 +143,8 @@ public class LocalChat extends AppCompatActivity {
                                 sdf.setTimeZone(TimeZone.getTimeZone("CET"));
                                 String time = sdf.format(date);
 
-                                Message newMessage = new Message(latitude, longitude, time, text);
+                                Message newMessage = new Message(latitude, longitude, time, text, uID);
                                 sendMessageEditTextView.setText("");
-                                sentMessageList.add(newMessage);
                                 //messageList.add(newMessage);
 
 
