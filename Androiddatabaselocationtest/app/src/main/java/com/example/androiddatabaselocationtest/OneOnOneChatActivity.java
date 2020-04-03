@@ -59,7 +59,7 @@ public class OneOnOneChatActivity extends AppCompatActivity {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser curUser = mAuth.getCurrentUser();
         final String uID = curUser.getUid();
-        String otherUID = "GWANMHWhZMWFO2qPOU4eEZiOnt43";
+        String otherUID = getIntent().getStringExtra("otherUID");
         String chatID;
 
         if (uID.compareTo(otherUID) < 0) {

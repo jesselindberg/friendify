@@ -48,6 +48,7 @@ public class LaunchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LaunchActivity.this, OneOnOneChatActivity.class);
+                intent.putExtra("otherUID", "GWANMHWhZMWFO2qPOU4eEZiOnt43");
                 startActivity(intent);
             }
         });

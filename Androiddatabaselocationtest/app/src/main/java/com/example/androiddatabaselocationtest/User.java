@@ -6,6 +6,7 @@ public class User {
     public String l_name;
     public String username;
     public String info;
+    public String uID;
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(CurrentLocation.class)
