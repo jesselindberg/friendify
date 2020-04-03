@@ -19,8 +19,9 @@ public class Message {
         this.senderID = senderID;
     }
 
-    public Boolean isSame(Message otherMessage) {
-        return (this.message == otherMessage.message) && (this.time == otherMessage.time);// && (this.longitude == otherMessage.longitude)
-                //&& (this.message == otherMessage.message) && (this.time == otherMessage.time));
+    public Message(String time, String message, String senderID) {
+        this.time = time;
+        this.message = message;
+        this.senderID = senderID;
     }
 }

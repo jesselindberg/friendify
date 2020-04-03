@@ -30,15 +30,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
-public class LocalChat extends AppCompatActivity {
+public class OneOnOneChatActivity extends AppCompatActivity {
 
     private DatabaseReference mMessageReference;
+    private DatabaseReference mUserReference;
     private RecyclerView mMessageRecycler;
     private MessageListAdapter mMessageAdapter;
     private Button sendButton;
     private TextView chatBox;
     private TextView sendMessageEditTextView;
-    private DatabaseReference mUserReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,38 +55,38 @@ public class LocalChat extends AppCompatActivity {
 
         sendButton = findViewById(R.id.chatBtn);
         chatBox = findViewById(R.id.edittext_chatbox);
-        mMessageReference = FirebaseDatabase.getInstance().getReference().child("messages");
-        sendMessageEditTextView =  (TextView) findViewById(R.id.edittext_chatbox);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser curUser = mAuth.getCurrentUser();
         final String uID = curUser.getUid();
+        String otherUID = "GWANMHWhZMWFO2qPOU4eEZiOnt43";
+        String chatID;
 
+        if (uID.compareTo(otherUID) < 0) {
+            chatID = uID + otherUID;
+        } else {
+            chatID = otherUID + uID;
+        }
+
+
+
+
+        mMessageReference = FirebaseDatabase.getInstance().getReference().child("chats/" + chatID);
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users/" + otherUID + "/chats/" + uID + "/last");
+        sendMessageEditTextView =  (TextView) findViewById(R.id.edittext_chatbox);
 
 
         ChildEventListener messageListener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull final DataSnapshot dataSnapshot, @Nullable String s) {
 
-                FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(LocalChat.this);
-                fusedLocationClient.getLastLocation().addOnSuccessListener(LocalChat.this, new OnSuccessListener<Location>() {
-                    @Override
-                    public void onSuccess(Location location) {
-                        if (location != null) {
-                            Message message = dataSnapshot.getValue(Message.class);
-                            Location messageLocation = new Location("message location");
-                            messageLocation.setLatitude(message.latitude);
-                            messageLocation.setLongitude(message.longitude);
 
-                            if (/*messageLocation.distanceTo(location <= 1000*/true) {
-                                messageList.add(message);
-                                mMessageAdapter.notifyDataSetChanged();
-                                layoutManager.scrollToPosition(mMessageAdapter.getItemCount()-1);
-                            }
+            Message message = dataSnapshot.getValue(Message.class);
 
-                        }
-                    }
-                });
+            messageList.add(message);
+            mMessageAdapter.notifyDataSetChanged();
+            layoutManager.scrollToPosition(mMessageAdapter.getItemCount()-1);
+
 
             }
 
@@ -120,37 +120,26 @@ public class LocalChat extends AppCompatActivity {
                 final String text = sendMessageEditTextView.getText().toString();
                 if (text.trim().length() > 0) {
 
-                    FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(LocalChat.this);
-                    fusedLocationClient.getLastLocation().addOnSuccessListener(LocalChat.this, new OnSuccessListener<Location>() {
-                        @Override
-                        public void onSuccess(Location location) {
-                            if (location != null) {
-                                Double latitude = location.getLatitude();
-                                Double longitude = location.getLongitude();
+                    // Get current time in ISO 8601 format
+                    // Input
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.set(Calendar.MILLISECOND, 0);
+                    Date date = calendar.getTime();
 
-                                // Get current time in ISO 8601 format
-                                // Input
-                                Calendar calendar = Calendar.getInstance();
-                                calendar.set(Calendar.MILLISECOND, 0);
-                                Date date = calendar.getTime();
+                    // Conversion
+                    SimpleDateFormat sdf;
+                    sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+                    sdf.setTimeZone(TimeZone.getTimeZone("CET"));
+                    String time = sdf.format(date);
 
-                                // Conversion
-                                SimpleDateFormat sdf;
-                                sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-                                sdf.setTimeZone(TimeZone.getTimeZone("CET"));
-                                String time = sdf.format(date);
+                    Message newMessage = new Message(time, text, uID);
+                    mMessageReference.push().setValue(newMessage);
+                    sendMessageEditTextView.setText("");
+                    mUserReference.setValue(newMessage);
 
-                                Message newMessage = new Message(latitude, longitude, time, text, uID);
-                                sendMessageEditTextView.setText("");
+                    mMessageAdapter.notifyDataSetChanged();
+                    layoutManager.scrollToPosition(mMessageAdapter.getItemCount() - 1);
 
-                                DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("messages").push();
-                                mDatabaseReference.setValue(newMessage);
-
-                                mMessageAdapter.notifyDataSetChanged();
-                                layoutManager.scrollToPosition(mMessageAdapter.getItemCount() - 1);
-                            }
-                        }
-                    });
                 }
             }
         });

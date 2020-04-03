@@ -7,10 +7,10 @@
     tools:context=".LaunchActivity">
 
     <Button
-        android:id="@+id/testActivityBtn"
+        android:id="@+id/chatWithJalliBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test Activity"
+        android:text="Chat with Jalli"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
