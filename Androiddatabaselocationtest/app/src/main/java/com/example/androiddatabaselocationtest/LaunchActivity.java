@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Locale;
+
 public class LaunchActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
@@ -72,6 +74,15 @@ public class LaunchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LaunchActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        final Button nearbyPeopleButton = (Button) findViewById(R.id.nearbyPeopleBtn);
+        nearbyPeopleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LaunchActivity.this, NearbyPeopleActivity.class);
                 startActivity(intent);
             }
         });
