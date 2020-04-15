@@ -110,7 +110,22 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:text="Save Changes" />
+                android:text="Save Changes"
+                android:textColor="@color/blackTextColor" />
+
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+        <RelativeLayout style="@style/profileDetailsLayout">
+
+            <Button
+                android:id="@+id/profileDeleteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@color/colorAccent"
+                android:text="Delete profile" />
 
         </RelativeLayout>
 

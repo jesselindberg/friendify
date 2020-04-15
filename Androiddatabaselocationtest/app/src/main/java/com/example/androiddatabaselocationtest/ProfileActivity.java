@@ -35,6 +35,8 @@ import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import com.facebook.login.LoginManager;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -44,6 +46,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference mUserReference;
+    private DatabaseReference mUserDataReference;
+    private DatabaseReference mLocationReference;
     private final int PICK_IMAGE_REQUEST = 22;
     private Uri filePath;
     String uID;
@@ -57,6 +61,7 @@ public class ProfileActivity extends AppCompatActivity {
         final ImageView profileImage = (ImageView) findViewById(R.id.profileImage);
         Button changeImageButton = (Button) findViewById(R.id.changeImageBtn);
         Button saveButton = (Button) findViewById(R.id.profileSaveBtn);
+        Button deleteProfileButton = (Button) findViewById(R.id.profileDeleteBtn);
         final TextView nameField = (TextView) findViewById(R.id.txtViewName);
         final EditText firstNameField = (EditText) findViewById(R.id.editTxtFirstName);
         final EditText lastNameField = (EditText) findViewById(R.id.editTxtLastName);
@@ -64,7 +69,7 @@ public class ProfileActivity extends AppCompatActivity {
         final EditText infoField = (EditText) findViewById(R.id.editTxtInfo);
 
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
+        final FirebaseUser user = mAuth.getCurrentUser();
         uID = user.getUid();
 
 
@@ -92,7 +97,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         // Get user data
-        mUserReference = FirebaseDatabase.getInstance().getReference().child("users/" + uID + "/data");
+        mUserDataReference = FirebaseDatabase.getInstance().getReference().child("users/" + uID + "/data");
         ValueEventListener userDataListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -112,7 +117,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         };
-        mUserReference.addValueEventListener(userDataListener);
+        mUserDataReference.addValueEventListener(userDataListener);
 
         // Select image
         changeImageButton.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +144,22 @@ public class ProfileActivity extends AppCompatActivity {
                 uploadImage();
             }
         });
+
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users/" + uID);
+        mLocationReference = FirebaseDatabase.getInstance().getReference().child("locations/" + uID);
+        deleteProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mUserReference.removeValue();
+                mLocationReference.removeValue();
+                storageReference.delete();
+                user.delete();
+                mAuth.signOut();
+                LoginManager.getInstance().logOut();
+            }
+        });
+
+
     }
 
 
