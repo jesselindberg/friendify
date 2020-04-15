@@ -30,18 +30,19 @@ public class NearbyPeopleActivity extends AppCompatActivity {
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get users from firebase database
-                // Get usernames and add them to ArrayList 'usernames'
-                for(DataSnapshot child : dataSnapshot.getChildren()) {
-                    User user = child.getValue(User.class);
-                    user.uID = child.getKey();
+
+                // Get users from Firebase
+                // Get users and add them to ArrayList 'users'
+                for(DataSnapshot userDS : dataSnapshot.getChildren()) {
+                    User user = userDS.child("data").getValue(User.class);
+                    user.uID = userDS.getKey();
 
                     if(user != null && !user.username.isEmpty()) {
                         users.add(user);
                     }
                 }
 
-                // Pass 'usernames' ArrayList to RecyclerAdapter
+                // Pass 'users' ArrayList to RecyclerAdapter
                 RecyclerView recyclerView = findViewById(R.id.cardsRecyclerView);
                 recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(new LinearLayoutManager(NearbyPeopleActivity.this));

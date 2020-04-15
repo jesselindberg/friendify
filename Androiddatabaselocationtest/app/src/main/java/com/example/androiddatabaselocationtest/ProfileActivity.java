@@ -92,7 +92,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         // Get user data
-        mUserReference = FirebaseDatabase.getInstance().getReference().child("users/" + uID);
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users/" + uID + "/data");
         ValueEventListener userDataListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
