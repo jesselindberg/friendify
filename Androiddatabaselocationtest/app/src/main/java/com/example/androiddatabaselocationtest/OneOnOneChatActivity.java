@@ -50,6 +50,7 @@ public class OneOnOneChatActivity extends AppCompatActivity {
         mMessageAdapter = new MessageListAdapter(this,messageList);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setSmoothScrollbarEnabled(true);
+        layoutManager.setStackFromEnd(true);
         mMessageRecycler.setLayoutManager(layoutManager);
         mMessageRecycler.setAdapter(mMessageAdapter);
 
