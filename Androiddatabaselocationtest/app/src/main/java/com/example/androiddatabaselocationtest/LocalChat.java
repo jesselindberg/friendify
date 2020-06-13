@@ -37,8 +37,6 @@ public class LocalChat extends AppCompatActivity {
     private MessageListAdapter mMessageAdapter;
     private Button sendButton;
     private TextView chatBox;
-    private TextView sendMessageEditTextView;
-    private DatabaseReference mUserReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +54,6 @@ public class LocalChat extends AppCompatActivity {
         sendButton = findViewById(R.id.chatBtn);
         chatBox = findViewById(R.id.edittext_chatbox);
         mMessageReference = FirebaseDatabase.getInstance().getReference().child("messages");
-        sendMessageEditTextView =  (TextView) findViewById(R.id.edittext_chatbox);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser curUser = mAuth.getCurrentUser();
@@ -117,7 +114,7 @@ public class LocalChat extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final String text = sendMessageEditTextView.getText().toString();
+                final String text = chatBox.getText().toString();
                 if (text.trim().length() > 0) {
 
                     FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(LocalChat.this);
@@ -141,7 +138,7 @@ public class LocalChat extends AppCompatActivity {
                                 String time = sdf.format(date);
 
                                 Message newMessage = new Message(latitude, longitude, time, text, uID);
-                                sendMessageEditTextView.setText("");
+                                chatBox.setText("");
 
                                 DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("messages").push();
                                 mDatabaseReference.setValue(newMessage);
