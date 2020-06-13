@@ -136,10 +136,10 @@ public class ProfileActivity extends AppCompatActivity {
                 String nickname = nicknameField.getText().toString();
                 String info = infoField.getText().toString();
 
-                mUserReference.child("f_name").setValue(firstName);
-                mUserReference.child("l_name").setValue(lastName);
-                mUserReference.child("username").setValue(nickname);
-                mUserReference.child("info").setValue(info);
+                mUserDataReference.child("f_name").setValue(firstName);
+                mUserDataReference.child("l_name").setValue(lastName);
+                mUserDataReference.child("username").setValue(nickname);
+                mUserDataReference.child("info").setValue(info);
 
                 uploadImage();
             }
