@@ -18,7 +18,8 @@
             android:layout_height="60dp"
             android:layout_marginLeft="5dp"
             android:id="@+id/cardUserImage"
-            android:contentDescription="User profile image" />
+            android:contentDescription="User profile image"
+            android:background="@drawable/profile_round"/>
 
         <TextView
             android:id="@+id/cardUsername"
@@ -45,6 +46,15 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"
             android:layout_marginTop="17dp"/>
+
+        <ImageButton
+            android:id="@+id/likeReactionBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="33dp"
+            android:layout_marginRight="125dp"
+            android:background="@drawable/like_image" />
 
     </RelativeLayout>
 

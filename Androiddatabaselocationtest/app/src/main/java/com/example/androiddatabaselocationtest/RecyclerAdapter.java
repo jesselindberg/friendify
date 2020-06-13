@@ -2,11 +2,13 @@ package com.example.androiddatabaselocationtest;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,6 +16,14 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
@@ -46,6 +56,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 mContext.startActivity(intent);
             }
         });
+
+        final DatabaseReference userReactions = FirebaseDatabase.getInstance().getReference().child("users/" + users.get(position).uID + "/reactions");
+        FirebaseAuth mAuth;
+        mAuth = FirebaseAuth.getInstance();
+        final FirebaseUser user = mAuth.getCurrentUser();
+        final String uID = user.getUid();
+
+        holder.likeReactionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                likeReactionClick(uID, userReactions);
+            }
+        });
     }
 
     @Override
@@ -57,13 +80,37 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         TextView username;
         CardView userInfoCard;
         Button chatButton;
+        ImageButton likeReactionButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.cardUsername);
             userInfoCard = itemView.findViewById(R.id.userInfoCard);
             this.chatButton = (Button) itemView.findViewById(R.id.oneOnOneChatBtn);
+            this.likeReactionButton = (ImageButton) itemView.findViewById(R.id.likeReactionBtn);
         }
+    }
+
+
+    private void likeReactionClick(final String uID, final DatabaseReference userReactions) {
+        userReactions.child("/like").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                System.out.println(dataSnapshot);
+                if (dataSnapshot.hasChild(uID)) {
+                    userReactions.child("/like/" + uID).removeValue();
+                    System.out.println("kulli");
+                } else {
+                    userReactions.child("/like/" + uID).setValue("");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
 }
