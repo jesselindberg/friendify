@@ -27,12 +27,15 @@ public class NearbyPeopleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nearby_people);
 
+
+
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 // Get users from Firebase
                 // Get users and add them to ArrayList 'users'
+                users.clear();
                 for(DataSnapshot userDS : dataSnapshot.getChildren()) {
                     User user = userDS.child("data").getValue(User.class);
                     user.uID = userDS.getKey();
@@ -58,5 +61,30 @@ public class NearbyPeopleActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+
+        //onStart();
     }
+
+    /*
+    protected void onStart() {
+        super.onStart();
+
+        onResume();
+
+    }
+
+    protected void onResume() {
+        super.onResume();
+
+
+
+    }
+
+    protected void onPause() {
+        super.onPause();
+
+        //users.clear();
+
+    }
+     */
 }
