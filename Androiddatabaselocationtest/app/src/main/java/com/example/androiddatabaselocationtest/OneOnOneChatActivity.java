@@ -34,6 +34,7 @@ public class OneOnOneChatActivity extends AppCompatActivity {
 
     private DatabaseReference mMessageReference;
     private DatabaseReference mUserReference;
+    private DatabaseReference mMyReference;
     private RecyclerView mMessageRecycler;
     private MessageListAdapter mMessageAdapter;
     private Button sendButton;
@@ -74,6 +75,7 @@ public class OneOnOneChatActivity extends AppCompatActivity {
 
         mMessageReference = FirebaseDatabase.getInstance().getReference().child("chats/" + chatID);
         mUserReference = FirebaseDatabase.getInstance().getReference().child("users/" + otherUID + "/chats/" + uID + "/last");
+        mMyReference = FirebaseDatabase.getInstance().getReference().child("users/" + uID + "/chats/" + otherUID + "/last");
         sendMessageEditTextView =  (TextView) findViewById(R.id.edittext_chatbox);
 
 
@@ -137,6 +139,7 @@ public class OneOnOneChatActivity extends AppCompatActivity {
                     mMessageReference.push().setValue(newMessage);
                     sendMessageEditTextView.setText("");
                     mUserReference.setValue(newMessage);
+                    mMyReference.setValue(newMessage);
 
                     mMessageAdapter.notifyDataSetChanged();
                     layoutManager.scrollToPosition(mMessageAdapter.getItemCount() - 1);

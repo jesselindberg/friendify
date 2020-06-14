@@ -43,6 +43,15 @@ public class LaunchActivity extends AppCompatActivity {
 
         final TextView launchActivityNameTextView = findViewById(R.id.launchActivityNameTxt);
 
+        final Button activeChatsButton = (Button) findViewById(R.id.activeChatsBtn);
+        activeChatsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LaunchActivity.this, ActiveChatsActivity.class);
+                startActivity(intent);
+            }
+        });
+
         final Button chatWithJalliButton = (Button) findViewById(R.id.chatWithJalliBtn);
         chatWithJalliButton.setOnClickListener(new View.OnClickListener() {
             @Override
