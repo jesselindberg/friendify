@@ -52,9 +52,36 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="33dp"
-            android:layout_marginRight="125dp"
-            android:background="@drawable/like_image" />
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="175dp"
+            android:alpha="1"
+            android:background="#FFFFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/like_image" />
+
+        <ImageButton
+            android:id="@+id/adoreReactionBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="145dp"
+            android:alpha="1"
+            android:background="#FFFFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/adore_image" />
+
+        <ImageButton
+            android:id="@+id/cheerReactionBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="115dp"
+            android:alpha="1"
+            android:background="#FFFFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cheer_image" />
 
     </RelativeLayout>
 
